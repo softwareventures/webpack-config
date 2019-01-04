@@ -20,7 +20,7 @@ export function production(project: Readonly<Project>): Configuration {
         : resolve(project.dir, project.destDir);
 
     const entry: Entry = project.entry == null
-        ? "./index.js"
+        ? "./index"
         : project.entry;
 
     return {
