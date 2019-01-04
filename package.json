@@ -14,6 +14,7 @@
   "devDependencies": {
     "@softwareventures/tsconfig": "^1.0.0",
     "@softwareventures/tslint-rules": "^0.6.2",
+    "@types/clean-webpack-plugin": "^0.1.2",
     "@types/webpack": "^4.4.22",
     "tslint": "^5.12.0",
     "typescript": "^3.2.2"
@@ -24,7 +25,6 @@
     "webpack": "^4.28.3"
   },
   "dependencies": {
-    "@types/clean-webpack-plugin": "^0.1.2",
     "clean-webpack-plugin": "^1.0.0"
   }
 }
