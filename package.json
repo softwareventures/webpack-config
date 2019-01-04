@@ -9,5 +9,9 @@
   "repository": "github:softwareventures/webpack-config",
   "scripts": {
     "test": "echo No tests yet"
+  },
+  "devDependencies": {
+    "@softwareventures/tsconfig": "^1.0.0",
+    "typescript": "^3.2.2"
   }
 }
