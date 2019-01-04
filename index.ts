@@ -38,7 +38,7 @@ function production(project: Readonly<WebpackConfig.Project>): Configuration {
     }
 
     const destDir = project.destDir == null
-        ? resolve(rootDir, "dest")
+        ? resolve(rootDir, "dist")
         : resolve(rootDir, project.destDir);
 
     const entry: WebpackConfig.Entry = project.entry == null
