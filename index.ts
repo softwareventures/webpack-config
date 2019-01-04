@@ -9,3 +9,17 @@ export function production(destDir: string): Configuration {
         }
     };
 }
+
+export function development(destDir: string): Configuration {
+    const config = production(destDir);
+
+    return {
+        ...config,
+        mode: "development",
+        devtool: "inline-source-map",
+        output: {
+            ...config.output,
+            devtoolModuleFilenameTemplate: "[resource-path]?[loaders]"
+        }
+    };
+}
