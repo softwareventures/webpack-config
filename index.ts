@@ -1,6 +1,6 @@
 import CleanWebpackPlugin = require("clean-webpack-plugin");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
-import {resolve} from "path";
+import {dirname, normalize, resolve, sep} from "path";
 import {Configuration} from "webpack";
 
 let placeholder: Required<Configuration>; // tslint:disable-line:prefer-const
@@ -8,16 +8,28 @@ let placeholder: Required<Configuration>; // tslint:disable-line:prefer-const
 export type Entry = typeof placeholder.entry;
 
 export interface Project {
-    dir: string;
+    dir?: string;
     destDir?: string;
     title: string;
     entry?: Entry;
 }
 
 export function production(project: Readonly<Project>): Configuration {
+    const dir = project.dir == null && module.parent != null
+        ? dirname(module.parent.filename)
+        : project.dir;
+
+    if (dir == null) {
+        throw new Error("Could not determine project root path");
+    }
+
+    if (!isAbsolute(dir)) {
+        throw new Error("Project root path must be absolute");
+    }
+
     const destDir = project.destDir == null
-        ? resolve(project.dir, "dest")
-        : resolve(project.dir, project.destDir);
+        ? resolve(dir, "dest")
+        : resolve(dir, project.destDir);
 
     const entry: Entry = project.entry == null
         ? "./index"
@@ -47,7 +59,7 @@ export function production(project: Readonly<Project>): Configuration {
             extensions: [".tsx", ".ts", ".js"]
         },
         plugins: [
-            new CleanWebpackPlugin(destDir),
+            new CleanWebpackPlugin(destDir, {root: dir}),
             new HtmlWebpackPlugin({
                 title: project.title,
                 inject: "head",
@@ -86,4 +98,8 @@ export function development(project: Readonly<Project>): Configuration {
             devtoolModuleFilenameTemplate: "[resource-path]?[loaders]"
         }
     };
+}
+
+function isAbsolute(dir: string): boolean {
+    return normalize(dir + sep) === normalize(resolve(dir) + sep);
 }
