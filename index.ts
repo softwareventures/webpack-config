@@ -5,16 +5,26 @@ import {Configuration} from "webpack";
 
 let placeholder: Required<Configuration>; // tslint:disable-line:prefer-const
 
-export type Entry = typeof placeholder.entry;
+namespace WebpackConfig { // tslint:disable-line:no-namespace
+    export type Entry = typeof placeholder.entry;
 
-export interface Project {
-    rootDir?: string;
-    destDir?: string;
-    title: string;
-    entry?: Entry;
+    export interface Project {
+        rootDir?: string;
+        destDir?: string;
+        title: string;
+        entry?: Entry;
+    }
 }
 
-export function production(project: Readonly<Project>): Configuration {
+function WebpackConfig(project: Readonly<WebpackConfig.Project>): (env: any) => Configuration {
+    return env => env.production
+        ? production(project)
+        : development(project);
+}
+
+export = WebpackConfig;
+
+function production(project: Readonly<WebpackConfig.Project>): Configuration {
     const rootDir = project.rootDir == null && module.parent != null
         ? dirname(module.parent.filename)
         : project.rootDir;
@@ -31,7 +41,7 @@ export function production(project: Readonly<Project>): Configuration {
         ? resolve(rootDir, "dest")
         : resolve(rootDir, project.destDir);
 
-    const entry: Entry = project.entry == null
+    const entry: WebpackConfig.Entry = project.entry == null
         ? "./index"
         : project.entry;
 
@@ -86,7 +96,7 @@ export function production(project: Readonly<Project>): Configuration {
     };
 }
 
-export function development(project: Readonly<Project>): Configuration {
+function development(project: Readonly<WebpackConfig.Project>): Configuration {
     const config = production(project);
 
     return {
