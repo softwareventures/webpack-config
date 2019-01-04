@@ -8,28 +8,28 @@ let placeholder: Required<Configuration>; // tslint:disable-line:prefer-const
 export type Entry = typeof placeholder.entry;
 
 export interface Project {
-    dir?: string;
+    rootDir?: string;
     destDir?: string;
     title: string;
     entry?: Entry;
 }
 
 export function production(project: Readonly<Project>): Configuration {
-    const dir = project.dir == null && module.parent != null
+    const rootDir = project.rootDir == null && module.parent != null
         ? dirname(module.parent.filename)
-        : project.dir;
+        : project.rootDir;
 
-    if (dir == null) {
+    if (rootDir == null) {
         throw new Error("Could not determine project root path");
     }
 
-    if (!isAbsolute(dir)) {
+    if (!isAbsolute(rootDir)) {
         throw new Error("Project root path must be absolute");
     }
 
     const destDir = project.destDir == null
-        ? resolve(dir, "dest")
-        : resolve(dir, project.destDir);
+        ? resolve(rootDir, "dest")
+        : resolve(rootDir, project.destDir);
 
     const entry: Entry = project.entry == null
         ? "./index"
@@ -59,7 +59,7 @@ export function production(project: Readonly<Project>): Configuration {
             extensions: [".tsx", ".ts", ".js"]
         },
         plugins: [
-            new CleanWebpackPlugin(destDir, {root: dir}),
+            new CleanWebpackPlugin(destDir, {root: rootDir}),
             new HtmlWebpackPlugin({
                 title: project.title,
                 inject: "head",
