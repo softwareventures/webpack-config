@@ -1,9 +1,29 @@
 import CleanWebpackPlugin = require("clean-webpack-plugin");
+import {resolve} from "path";
 import {Configuration} from "webpack";
 
-export function production(destDir: string): Configuration {
+let placeholder: Required<Configuration>; // tslint:disable-line:prefer-const
+
+export type Entry = typeof placeholder.entry;
+
+export interface Project {
+    dir: string;
+    destDir?: string;
+    entry?: Entry;
+}
+
+export function production(project: Readonly<Project>): Configuration {
+    const destDir = project.destDir == null
+        ? resolve(project.dir, "dest")
+        : resolve(project.dir, project.destDir);
+
+    const entry: Entry = project.entry == null
+        ? "./index.js"
+        : project.entry;
+
     return {
         mode: "production",
+        entry,
         module: {
             rules: [
                 {
@@ -34,8 +54,8 @@ export function production(destDir: string): Configuration {
     };
 }
 
-export function development(destDir: string): Configuration {
-    const config = production(destDir);
+export function development(project: Readonly<Project>): Configuration {
+    const config = production(project);
 
     return {
         ...config,

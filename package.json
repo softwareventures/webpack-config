@@ -12,6 +12,7 @@
     "test": "echo No tests yet"
   },
   "devDependencies": {
+    "@types/node": "^10.12.18",
     "@softwareventures/tsconfig": "^1.0.0",
     "@softwareventures/tslint-rules": "^0.6.2",
     "@types/clean-webpack-plugin": "^0.1.2",
