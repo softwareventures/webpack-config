@@ -4,6 +4,9 @@
   "description": "Standard webpack configuration for Software Ventures Limited",
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
   "license": "ISC",
+  "bugs": "https://github.com/softwareventures/webpack-config/issues",
+  "homepage": "https://github.com/softwareventures/webpack-config",
+  "repository": "github:softwareventures/webpack-config",
   "scripts": {
     "test": "echo No tests yet"
   }
