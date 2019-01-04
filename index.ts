@@ -17,7 +17,7 @@ namespace WebpackConfig { // tslint:disable-line:no-namespace
 }
 
 function WebpackConfig(project: Readonly<WebpackConfig.Project>): (env: any) => Configuration {
-    return env => env.production
+    return env => env != null && env.production
         ? production(project)
         : development(project);
 }
