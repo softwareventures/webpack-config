@@ -3,6 +3,7 @@
   "compilerOptions": {
     "lib": [
       "es2015"
-    ]
+    ],
+    "importHelpers": false
   }
 }
