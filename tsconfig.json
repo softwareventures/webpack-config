@@ -1,3 +1,8 @@
 {
-  "extends": "@softwareventures/tsconfig"
+  "extends": "@softwareventures/tsconfig",
+  "compilerOptions": {
+    "lib": [
+      "es2015"
+    ]
+  }
 }
