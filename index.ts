@@ -1,3 +1,4 @@
+import CleanWebpackPlugin = require("clean-webpack-plugin");
 import {Configuration} from "webpack";
 
 export function production(destDir: string): Configuration {
@@ -23,6 +24,9 @@ export function production(destDir: string): Configuration {
         resolve: {
             extensions: [".tsx", ".ts", ".js"]
         },
+        plugins: [
+            new CleanWebpackPlugin(destDir)
+        ],
         output: {
             filename: "index.js",
             path: destDir

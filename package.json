@@ -22,5 +22,9 @@
     "ts-loader": "^5.3.2",
     "typescript": "^3.2.2",
     "webpack": "^4.28.3"
+  },
+  "dependencies": {
+    "@types/clean-webpack-plugin": "^0.1.2",
+    "clean-webpack-plugin": "^1.0.0"
   }
 }
