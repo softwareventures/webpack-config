@@ -95,6 +95,10 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                             }
                         },
                         exclude: /\/node_modules\//
+                    },
+                    {
+                        test: /\.(png|jpe?g|gif)$/,
+                        use: "file-loader"
                     }
                 ]
             },
