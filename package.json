@@ -1,6 +1,6 @@
 {
   "name": "@softwareventures/webpack-config",
-  "version": "0.6.0",
+  "version": "0.0.0-development",
   "description": "Standard webpack configuration for Software Ventures Limited",
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
   "license": "ISC",
@@ -9,7 +9,8 @@
   "repository": "github:softwareventures/webpack-config",
   "scripts": {
     "prepare": "tslint --project . && tsc",
-    "test": "echo No tests yet"
+    "test": "echo No tests yet",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@softwareventures/tslint-rules": "0.6.4",
@@ -19,7 +20,8 @@
     "@types/webpack": "4.4.24",
     "cz-conventional-changelog": "2.1.0",
     "tslint": "5.12.1",
-    "typescript": "3.2.4"
+    "typescript": "3.2.4",
+    "semantic-release": "^15.13.3"
   },
   "peerDependencies": {
     "ts-loader": "^5.3.2",
