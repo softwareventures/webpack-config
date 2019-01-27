@@ -21,7 +21,7 @@
     "cz-conventional-changelog": "2.1.0",
     "tslint": "5.12.1",
     "typescript": "3.2.4",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "15.13.3"
   },
   "peerDependencies": {
     "ts-loader": "^5.3.2",
