@@ -20,7 +20,7 @@
     "@types/webpack": "4.4.24",
     "cz-conventional-changelog": "2.1.0",
     "tslint": "5.12.1",
-    "typescript": "3.2.4",
+    "typescript": "3.3.1",
     "semantic-release": "15.13.3"
   },
   "peerDependencies": {
