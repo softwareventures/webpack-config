@@ -132,7 +132,12 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                     },
                     {
                         test: /\.(png|jpe?g|gif)$/,
-                        use: "file-loader"
+                        use: {
+                            loader: "file-loader",
+                            options: {
+                                name: "[sha256:hash:base64:8].[ext]"
+                            }
+                        }
                     }
                 ]
             },
