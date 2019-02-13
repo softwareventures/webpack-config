@@ -1,6 +1,7 @@
 import CleanWebpackPlugin = require("clean-webpack-plugin");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import {dirname, normalize, resolve, sep} from "path";
+import UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 import {Configuration, RuleSetUse} from "webpack";
 
 // Placeholder variables for type declarations.
@@ -138,6 +139,27 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
             devtool: mode === "development"
                 ? "inline-source-map"
                 : false,
+            optimization: mode === "development"
+                ? {}
+                : {
+                    minimizer: [
+                        new UglifyJsPlugin({
+                            cache: true,
+                            parallel: true,
+                            uglifyOptions: {
+                                compress: {
+                                    passes: 2,
+                                    unsafe: true,
+                                    unsafe_math: true,
+                                    unsafe_proto: true
+                                },
+                                output: {
+                                    inline_script: false
+                                }
+                            }
+                        })
+                    ]
+                },
             plugins: [
                 new CleanWebpackPlugin(destDir, {root: rootDir}),
                 new HtmlWebpackPlugin(htmlOptions)
