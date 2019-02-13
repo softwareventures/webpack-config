@@ -1,5 +1,6 @@
 import CleanWebpackPlugin = require("clean-webpack-plugin");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
+import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import {dirname, normalize, resolve, sep} from "path";
 import UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 import {Configuration, RuleSetUse} from "webpack";
@@ -125,7 +126,9 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                     },
                     {
                         test: /\.css$/,
-                        use: [styleLoader, cssLoader]
+                        use: mode === "development"
+                            ? [styleLoader, cssLoader]
+                            : [MiniCssExtractPlugin.loader, cssLoader]
                     },
                     {
                         test: /\.(png|jpe?g|gif)$/,
@@ -162,6 +165,7 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                 },
             plugins: [
                 new CleanWebpackPlugin(destDir, {root: rootDir}),
+                new MiniCssExtractPlugin(),
                 new HtmlWebpackPlugin(htmlOptions)
             ],
             output: {
