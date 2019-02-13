@@ -1,7 +1,7 @@
 import CleanWebpackPlugin = require("clean-webpack-plugin");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import {dirname, normalize, resolve, sep} from "path";
-import {Configuration} from "webpack";
+import {Configuration, RuleSetUse} from "webpack";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>; // tslint:disable-line:prefer-const
@@ -45,6 +45,12 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
             ? resolve(rootDir, "dist")
             : resolve(rootDir, project.destDir);
 
+        const vendor = project.vendor == null
+            ? "sv"
+            : project.vendor;
+
+        const vendorCssId = vendor.replace(/[[\]]/, "_");
+
         const entry: WebpackConfig.Entry = project.entry == null
             ? "./index"
             : project.entry;
@@ -79,6 +85,25 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
             }
         }
 
+        const styleLoader: RuleSetUse = {
+            loader: "style-loader",
+            options: {
+                hmr: mode === "development",
+                sourceMap: mode === "development",
+                convertToAbsoluteUrls: mode === "development"
+            }
+        };
+
+        const cssLoader: RuleSetUse = {
+            loader: "css-loader",
+            options: {
+                modules: "local",
+                localIdentName: vendorCssId + "[sha256:contenthash:base64:5]",
+                sourceMap: mode === "development",
+                camelCase: true
+            }
+        };
+
         return {
             mode,
             entry,
@@ -96,6 +121,10 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                             }
                         },
                         exclude: /\/node_modules\//
+                    },
+                    {
+                        test: /\.css$/,
+                        use: [styleLoader, cssLoader]
                     },
                     {
                         test: /\.(png|jpe?g|gif)$/,
