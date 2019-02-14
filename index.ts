@@ -106,6 +106,19 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
             }
         };
 
+        const lessLoader: RuleSetUse = {
+            loader: "less-loader",
+            options: {
+                strictUnits: true,
+                sourceMap: mode === "development"
+                    ? {
+                        outputSourceFiles: true,
+                        sourceMapFileInline: true
+                    }
+                    : void 0
+            }
+        };
+
         return {
             mode,
             entry,
@@ -129,6 +142,12 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                         use: mode === "development"
                             ? [styleLoader, cssLoader]
                             : [MiniCssExtractPlugin.loader, cssLoader]
+                    },
+                    {
+                        test: /\.less$/,
+                        use: mode === "development"
+                            ? [styleLoader, cssLoader, lessLoader]
+                            : [MiniCssExtractPlugin.loader, cssLoader, lessLoader]
                     },
                     {
                         test: /\.(png|jpe?g|gif)$/,
