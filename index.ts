@@ -98,7 +98,9 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
             loader: "css-loader",
             options: {
                 modules: "local",
-                localIdentName: vendorCssId + "[sha256:contenthash:base64:5]",
+                localIdentName: mode === "development"
+                    ? "[local]-[sha256:contenthash:base64:5]"
+                    : vendorCssId + "[sha256:contenthash:base64:5]",
                 camelCase: true
             }
         };
