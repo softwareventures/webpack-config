@@ -147,7 +147,9 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                         use: {
                             loader: "file-loader",
                             options: {
-                                name: "[sha256:hash:base64:8].[ext]"
+                                name: mode === "development"
+                                    ? "[path][name]-[sha256:hash:base64:8].[ext]"
+                                    : "[sha256:hash:base64:8].[ext]"
                             }
                         }
                     }
