@@ -90,9 +90,7 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
         const styleLoader: RuleSetUse = {
             loader: "style-loader",
             options: {
-                hmr: mode === "development",
-                sourceMap: mode === "development",
-                convertToAbsoluteUrls: mode === "development"
+                hmr: mode === "development"
             }
         };
 
@@ -101,7 +99,6 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
             options: {
                 modules: "local",
                 localIdentName: vendorCssId + "[sha256:contenthash:base64:5]",
-                sourceMap: mode === "development",
                 camelCase: true
             }
         };
@@ -109,13 +106,7 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
         const lessLoader: RuleSetUse = {
             loader: "less-loader",
             options: {
-                strictUnits: true,
-                sourceMap: mode === "development"
-                    ? {
-                        outputSourceFiles: true,
-                        sourceMapFileInline: true
-                    }
-                    : void 0
+                strictUnits: true
             }
         };
 
