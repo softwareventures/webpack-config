@@ -183,7 +183,9 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                     ]
                 },
             plugins: [
-                new CleanWebpackPlugin(destDir, {root: rootDir}),
+                ...mode === "development"
+                    ? []
+                    : [new CleanWebpackPlugin(destDir, {root: rootDir})],
                 new MiniCssExtractPlugin(),
                 new HtmlWebpackPlugin(htmlOptions)
             ],
