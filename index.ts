@@ -1,4 +1,5 @@
 import CleanWebpackPlugin = require("clean-webpack-plugin");
+import cssnano = require("cssnano");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import {dirname, normalize, resolve, sep} from "path";
@@ -97,11 +98,19 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
         const cssLoader: RuleSetUse = {
             loader: "css-loader",
             options: {
+                importLoaders: mode === "development" ? 1 : 0,
                 modules: "local",
                 localIdentName: mode === "development"
                     ? "[local]-[sha256:contenthash:base64:5]"
                     : vendorCssId + "[sha256:contenthash:base64:5]",
                 camelCase: true
+            }
+        };
+
+        const postcssLoader: RuleSetUse = {
+            loader: "postcss-loader",
+            options: {
+                plugins: [cssnano]
             }
         };
 
@@ -134,13 +143,13 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                         test: /\.css$/,
                         use: mode === "development"
                             ? [styleLoader, cssLoader]
-                            : [MiniCssExtractPlugin.loader, cssLoader]
+                            : [MiniCssExtractPlugin.loader, cssLoader, postcssLoader]
                     },
                     {
                         test: /\.less$/,
                         use: mode === "development"
                             ? [styleLoader, cssLoader, lessLoader]
-                            : [MiniCssExtractPlugin.loader, cssLoader, lessLoader]
+                            : [MiniCssExtractPlugin.loader, cssLoader, postcssLoader, lessLoader]
                     },
                     {
                         test: /\.(png|jpe?g|gif)$/,
