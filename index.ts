@@ -152,7 +152,7 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                             : [MiniCssExtractPlugin.loader, cssLoader, postcssLoader, lessLoader]
                     },
                     {
-                        test: /\.(png|jpe?g|gif)$/,
+                        test: /\.(jpe?g|gif|mp[34]|og[agv]|png|web[mp])$/,
                         use: {
                             loader: "file-loader",
                             options: {
