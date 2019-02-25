@@ -165,7 +165,7 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                 ]
             },
             resolve: {
-                extensions: [".tsx", ".ts", ".js"]
+                extensions: [".js", ".tsx", ".ts"]
             },
             devtool: mode === "development"
                 ? "inline-source-map"
