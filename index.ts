@@ -58,7 +58,6 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
             ? "./index"
             : project.entry;
 
-
         const htmlOptions: HtmlWebpackPlugin.Options = {
             title: project.title,
             inject: "head",
