@@ -74,8 +74,8 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                 removeStyleLinkTypeAttributes: true,
                 sortAttributes: true,
                 sortClassName: true,
-                useShortDocType: true
-            } as any // FIXME Workaround outdated type definitions
+                useShortDoctype: true
+            }
         };
 
         if (project.html != null) {
