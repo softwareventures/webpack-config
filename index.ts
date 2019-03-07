@@ -19,7 +19,7 @@ namespace WebpackConfig { // tslint:disable-line:no-namespace
         readonly title: string;
         readonly vendor?: string;
         readonly entry?: Entry;
-        html?: {
+        readonly html?: {
             readonly template?: typeof htmlOptions.template;
             readonly templateParameters?: typeof htmlOptions.templateParameters;
         };
