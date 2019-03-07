@@ -23,6 +23,7 @@ namespace WebpackConfig { // tslint:disable-line:no-namespace
             readonly template?: typeof htmlOptions.template;
             readonly templateParameters?: typeof htmlOptions.templateParameters;
         };
+        readonly customize?: (configuration: Configuration) => Configuration;
     }
 }
 
@@ -120,7 +121,7 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
             }
         };
 
-        return {
+        const configuration: Configuration = {
             mode,
             entry,
             module: {
@@ -203,6 +204,12 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                 devtoolModuleFilenameTemplate: "[resource-path]?[loaders]"
             }
         };
+
+        if (project.customize == null) {
+            return configuration;
+        } else {
+            return project.customize(configuration);
+        }
     };
 }
 
