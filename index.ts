@@ -199,7 +199,6 @@ function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configurat
                 new HtmlWebpackPlugin(htmlOptions)
             ],
             output: {
-                filename: "index.js",
                 path: destDir,
                 devtoolModuleFilenameTemplate: "[resource-path]?[loaders]"
             }
