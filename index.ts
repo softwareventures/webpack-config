@@ -25,13 +25,19 @@ namespace WebpackConfig { // tslint:disable-line:no-namespace
         };
         readonly customize?: (configuration: Configuration) => Configuration;
     }
+
+    export type ProjectSource = Project | ((mode: "production" | "development") => Project);
 }
 
-function WebpackConfig(project: WebpackConfig.Project): (env: any) => Configuration {
+function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) => Configuration {
     return env => {
         const mode = env != null && env.production
             ? "production"
             : "development";
+
+        const project = typeof projectSource === "function"
+            ? projectSource(mode)
+            : projectSource;
 
         const rootDir = project.rootDir == null && module.parent != null
             ? dirname(module.parent.filename)
