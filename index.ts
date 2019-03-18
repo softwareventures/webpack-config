@@ -22,7 +22,7 @@ namespace WebpackConfig { // tslint:disable-line:no-namespace
         readonly html?: {
             readonly template?: typeof htmlOptions.template;
             readonly templateParameters?: typeof htmlOptions.templateParameters;
-        };
+        } | boolean;
         readonly customize?: (configuration: Configuration) => Configuration;
     }
 
@@ -84,12 +84,12 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             }
         };
 
-        if (project.html != null) {
-            if (project.html.template != null) {
+        if (project.html != null && project.html !== false) {
+            if (typeof project.html === "object" && project.html.template != null) {
                 htmlOptions.template = project.html.template;
             }
 
-            if (project.html.templateParameters != null) {
+            if (typeof project.html === "object" && project.html.templateParameters != null) {
                 htmlOptions.templateParameters = project.html.templateParameters;
             }
         }
@@ -202,7 +202,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     ? []
                     : [new CleanWebpackPlugin(destDir, {root: rootDir})],
                 new MiniCssExtractPlugin(),
-                new HtmlWebpackPlugin(htmlOptions)
+                ...project.html === false
+                    ? []
+                    : [new HtmlWebpackPlugin(htmlOptions)]
             ],
             output: {
                 path: destDir,
