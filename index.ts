@@ -1,4 +1,4 @@
-import CleanWebpackPlugin = require("clean-webpack-plugin");
+import CleanWebpackPlugin from "clean-webpack-plugin";
 import cssnano = require("cssnano");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -200,7 +200,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             plugins: [
                 ...mode === "development"
                     ? []
-                    : [new CleanWebpackPlugin(destDir, {root: rootDir})],
+                    : [new CleanWebpackPlugin()],
                 new MiniCssExtractPlugin(),
                 ...project.html === false
                     ? []
