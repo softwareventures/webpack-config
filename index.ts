@@ -59,7 +59,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             ? "sv"
             : project.vendor;
 
-        const vendorCssId = vendor.replace(/[[\]]/, "_");
+        const vendorCssId = vendor.replace(/[[\]]/g, "_");
 
         const entry: WebpackConfig.Entry = project.entry == null
             ? "./index"
