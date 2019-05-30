@@ -1,4 +1,4 @@
-import CleanWebpackPlugin from "clean-webpack-plugin";
+import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import cssnano = require("cssnano");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
