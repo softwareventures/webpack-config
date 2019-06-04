@@ -13,7 +13,7 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@softwareventures/tslint-rules": "0.6.6",
+    "@softwareventures/tslint-rules": "0.7.0",
     "@types/cssnano": "4.0.0",
     "@types/html-webpack-plugin": "3.2.0",
     "@types/mini-css-extract-plugin": "0.2.1",
