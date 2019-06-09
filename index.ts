@@ -1,10 +1,10 @@
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
+import {dirname, normalize, resolve, sep} from "path";
+import {Configuration, RuleSetUse} from "webpack";
 import cssnano = require("cssnano");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
-import {dirname, normalize, resolve, sep} from "path";
 import UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-import {Configuration, RuleSetUse} from "webpack";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>; // tslint:disable-line:prefer-const
@@ -39,16 +39,16 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             ? projectSource(mode)
             : projectSource;
 
-        const rootDir = project.rootDir == null && module.parent != null
-            ? dirname(module.parent.filename)
-            : project.rootDir;
+        const configDir = module.parent == null
+            ? null
+            : dirname(module.parent.filename);
 
-        if (rootDir == null) {
+        const rootDir = configDir == null
+            ? project.rootDir
+            : resolve(configDir, project.rootDir || ".");
+
+        if (rootDir == null || !isAbsolute(rootDir)) {
             throw new Error("Could not determine project root path");
-        }
-
-        if (!isAbsolute(rootDir)) {
-            throw new Error("Project root path must be absolute");
         }
 
         const destDir = project.destDir == null
