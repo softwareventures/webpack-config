@@ -23,6 +23,9 @@ namespace WebpackConfig { // tslint:disable-line:no-namespace
             readonly template?: typeof htmlOptions.template;
             readonly templateParameters?: typeof htmlOptions.templateParameters;
         } | boolean;
+        readonly css?: {
+            readonly mode?: "embed-in-js" | "load-from-html";
+        };
         readonly customize?: (configuration: Configuration) => Configuration;
     }
 
@@ -127,6 +130,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             }
         };
 
+        const extractCss = mode !== "development"
+            && (!project.css || project.css.mode == null || project.css.mode === "load-from-html");
+
         const configuration: Configuration = {
             mode,
             entry,
@@ -147,13 +153,13 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     },
                     {
                         test: /\.css$/,
-                        use: mode === "development"
+                        use: extractCss
                             ? [styleLoader, cssLoader]
                             : [MiniCssExtractPlugin.loader, cssLoader, postcssLoader]
                     },
                     {
                         test: /\.less$/,
-                        use: mode === "development"
+                        use: extractCss
                             ? [styleLoader, cssLoader, lessLoader]
                             : [MiniCssExtractPlugin.loader, cssLoader, postcssLoader, lessLoader]
                     },
