@@ -154,14 +154,14 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     {
                         test: /\.css$/,
                         use: extractCss
-                            ? [styleLoader, cssLoader]
-                            : [MiniCssExtractPlugin.loader, cssLoader, postcssLoader]
+                            ? [MiniCssExtractPlugin.loader, cssLoader, postcssLoader]
+                            : [styleLoader, cssLoader]
                     },
                     {
                         test: /\.less$/,
                         use: extractCss
-                            ? [styleLoader, cssLoader, lessLoader]
-                            : [MiniCssExtractPlugin.loader, cssLoader, postcssLoader, lessLoader]
+                            ? [MiniCssExtractPlugin.loader, cssLoader, postcssLoader, lessLoader]
+                            : [styleLoader, cssLoader, lessLoader]
                     },
                     {
                         test: /\.(jpe?g|gif|mp[34]|og[agv]|png|svg|web[mp])$/,
