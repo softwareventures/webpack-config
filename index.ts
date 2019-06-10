@@ -1,10 +1,10 @@
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
-import {dirname, normalize, resolve, sep} from "path";
-import {Configuration, RuleSetUse} from "webpack";
 import cssnano = require("cssnano");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
+import {dirname, normalize, resolve, sep} from "path";
 import UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+import {Configuration, RuleSetUse} from "webpack";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>; // tslint:disable-line:prefer-const
