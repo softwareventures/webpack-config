@@ -153,15 +153,28 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     },
                     {
                         test: /\.css$/,
-                        use: extractCss
-                            ? [MiniCssExtractPlugin.loader, cssLoader, postcssLoader]
-                            : [styleLoader, cssLoader]
+                        use: [
+                            extractCss
+                                ? MiniCssExtractPlugin.loader
+                                : styleLoader,
+                            cssLoader,
+                            ...mode === "development"
+                                ? []
+                                : [postcssLoader]
+                        ]
                     },
                     {
                         test: /\.less$/,
-                        use: extractCss
-                            ? [MiniCssExtractPlugin.loader, cssLoader, postcssLoader, lessLoader]
-                            : [styleLoader, cssLoader, lessLoader]
+                        use: [
+                            extractCss
+                                ? MiniCssExtractPlugin.loader
+                                : styleLoader,
+                            cssLoader,
+                            ...mode === "development"
+                                ? []
+                                : [postcssLoader],
+                            lessLoader
+                        ]
                     },
                     {
                         test: /\.(jpe?g|gif|mp[34]|og[agv]|png|svg|web[mp])$/,
