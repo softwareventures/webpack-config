@@ -220,7 +220,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 ...mode === "development"
                     ? []
                     : [new CleanWebpackPlugin()],
-                new MiniCssExtractPlugin(),
+                ...extractCss
+                    ? [new MiniCssExtractPlugin()]
+                    : [],
                 ...project.html === false
                     ? []
                     : [new HtmlWebpackPlugin(htmlOptions)]
