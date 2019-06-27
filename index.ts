@@ -146,7 +146,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                                 compilerOptions: {
                                     declaration: false,
                                     noEmit: false
-                                }
+                                },
+                                transpileOnly: mode === "development"
                             }
                         },
                         exclude: /\/node_modules\//
