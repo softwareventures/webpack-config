@@ -230,7 +230,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 ...mode === "development"
                     ? []
                     : [new CleanWebpackPlugin()],
-                new DefinePlugin(dictionaryMap(define, JSON.stringify)),
+                new DefinePlugin(dictionaryMap(define, value => JSON.stringify(value))),
                 ...extractCss
                     ? [new MiniCssExtractPlugin()]
                     : [],
