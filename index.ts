@@ -135,6 +135,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
 
         const configuration: Configuration = {
             mode,
+            context: rootDir,
             entry,
             module: {
                 rules: [
