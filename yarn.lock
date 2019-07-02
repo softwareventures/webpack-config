@@ -1555,6 +1555,11 @@ dezalgo@^1.0.0, dezalgo@~1.0.3:
     asap "^2.0.0"
     wrappy "1"
 
+dictionary-types@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-1.0.0.tgz#c74738702a2253dce2f2761f5e0a44f203f994fb"
+  integrity sha512-WBoXmEOlpph7MeUNAaHzf704J15wpTgic6xlnak47uuibcmOKEdYBwmVRR4mHtNz+K2MGLvxE2m1LojdqwpTPA==
+
 diff@^3.2.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
@@ -2988,6 +2993,11 @@ json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
+
+json-typescript@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/json-typescript/-/json-typescript-1.1.2.tgz#033f8309856ef9054cc3384db2ce81d4e0ad4d00"
+  integrity sha512-Np07MUsYMKbB0nNlw/MMIRjUK7ehO48LA4FsrzrhCfTUxMKbvOBAo0sc0b4nQ80ge9d32sModCunCgoyUojgUA==
 
 json5@^0.5.0:
   version "0.5.1"

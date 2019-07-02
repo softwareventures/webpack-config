@@ -1,10 +1,12 @@
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import cssnano = require("cssnano");
+import {Dictionary, ReadonlyDictionary} from "dictionary-types";
 import HtmlWebpackPlugin = require("html-webpack-plugin");
+import {Object as JsonObject} from "json-typescript";
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import {dirname, normalize, resolve, sep} from "path";
 import UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-import {Configuration, RuleSetUse} from "webpack";
+import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>; // tslint:disable-line:prefer-const
@@ -19,6 +21,7 @@ namespace WebpackConfig { // tslint:disable-line:no-namespace
         readonly title: string;
         readonly vendor?: string;
         readonly entry?: Entry;
+        readonly define?: JsonObject;
         readonly html?: {
             readonly template?: typeof htmlOptions.template;
             readonly templateParameters?: typeof htmlOptions.templateParameters;
@@ -67,6 +70,10 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         const entry: WebpackConfig.Entry = project.entry == null
             ? "./index"
             : project.entry;
+
+        const define: JsonObject = project.define == null
+            ? {}
+            : project.define;
 
         const htmlOptions: HtmlWebpackPlugin.Options = {
             title: project.title,
@@ -222,6 +229,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 ...mode === "development"
                     ? []
                     : [new CleanWebpackPlugin()],
+                new DefinePlugin(dictionaryMap(define, JSON.stringify)),
                 ...extractCss
                     ? [new MiniCssExtractPlugin()]
                     : [],
@@ -247,4 +255,14 @@ export = WebpackConfig;
 
 function isAbsolute(dir: string): boolean {
     return normalize(dir + sep) === normalize(resolve(dir) + sep);
+}
+
+function dictionaryMap<T, U>(dictionary: ReadonlyDictionary<T>, f: (element: T) => U): Dictionary<U> {
+    const result: Dictionary<U> = Object.create(null);
+
+    for (const key of Object.keys(dictionary)) {
+        result[key] = f(dictionary[key]);
+    }
+
+    return result;
 }
