@@ -138,6 +138,22 @@
     into-stream "^4.0.0"
     lodash "^4.17.4"
 
+"@softwareventures/array@0.14.1":
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.14.1.tgz#bc0e5d01e42ec4d959dfc8c1ad873afd5174f5f3"
+  integrity sha512-z8pcSvS0B7siGe87mr6Y12670emHiMgD9OFEoXIoaWMeP2m/jhX3hKYSi44uVnm7FbaERreI4+t0paA4fMdSYA==
+  dependencies:
+    "@softwareventures/ordered" "^0.2.0"
+    dictionary-types "^1.0.0"
+    tslib "^1.9.3"
+
+"@softwareventures/ordered@^0.2.0":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-0.2.1.tgz#97a83745270659d13b9fa4c669fb878f763d9dbe"
+  integrity sha512-58nhr1sepVe/T9fAbmQlV+Gg+WCceT0cPWIq5PpjIKuKz5t8ywclfiQrfDi1FC10nJCa3t6k5QhgzbVupU7qbw==
+  dependencies:
+    tslib "^1.9.3"
+
 "@softwareventures/tsconfig@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-1.0.0.tgz#987228780994db57e92332b4f595a81956fe7920"
@@ -1555,7 +1571,7 @@ dezalgo@^1.0.0, dezalgo@~1.0.3:
     asap "^2.0.0"
     wrappy "1"
 
-dictionary-types@1.0.0:
+dictionary-types@1.0.0, dictionary-types@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-1.0.0.tgz#c74738702a2253dce2f2761f5e0a44f203f994fb"
   integrity sha512-WBoXmEOlpph7MeUNAaHzf704J15wpTgic6xlnak47uuibcmOKEdYBwmVRR4mHtNz+K2MGLvxE2m1LojdqwpTPA==

@@ -7,6 +7,7 @@ import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import {dirname, normalize, resolve, sep} from "path";
 import UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
+import {fold} from "@softwareventures/array";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>; // tslint:disable-line:prefer-const
@@ -32,7 +33,7 @@ namespace WebpackConfig { // tslint:disable-line:no-namespace
         readonly customize?: (configuration: Configuration) => Configuration;
     }
 
-    export type ProjectSource = Project | ((mode: "production" | "development") => Project);
+    export type ProjectSource = Project | ((mode: "production" | "development", env: JsonObject) => Project);
 }
 
 function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) => Configuration {
@@ -42,7 +43,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             : "development";
 
         const project = typeof projectSource === "function"
-            ? projectSource(mode)
+            ? projectSource(mode, normalizeEnv(env))
             : projectSource;
 
         const configDir = module.parent == null
@@ -265,4 +266,23 @@ function dictionaryMap<T, U>(dictionary: ReadonlyDictionary<T>, f: (element: T) 
     }
 
     return result;
+}
+
+function dictionaryMerge<T>(a: ReadonlyDictionary<T>, b: ReadonlyDictionary<T>): Dictionary<T> {
+    const result: Dictionary<T> = Object.create(null);
+    Object.assign(result, a);
+    Object.assign(result, b);
+    return result;
+}
+
+function normalizeEnv(env: any): JsonObject {
+    if (env instanceof Array) {
+        return fold(env,
+            (accumulator, element) => dictionaryMerge(accumulator, normalizeEnv(element)),
+            Object.create(null));
+    } else if (typeof env === "object") {
+        return env;
+    } else {
+        return {};
+    }
 }
