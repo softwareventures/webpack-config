@@ -1,3 +1,4 @@
+import {fold} from "@softwareventures/array";
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import cssnano = require("cssnano");
 import {Dictionary, ReadonlyDictionary} from "dictionary-types";
@@ -7,7 +8,6 @@ import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import {dirname, normalize, resolve, sep} from "path";
 import UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
-import {fold} from "@softwareventures/array";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>; // tslint:disable-line:prefer-const
