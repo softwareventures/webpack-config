@@ -10,7 +10,9 @@
   "scripts": {
     "prepare": "tsc",
     "test": "tslint --project .",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@softwareventures/tslint-rules": "0.7.0",
@@ -45,11 +47,13 @@
     "mini-css-extract-plugin": "^0.7.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
-    "uglifyjs-webpack-plugin": "^2.1.1"
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "snyk": "^1.189.0"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  }
+  },
+  "snyk": true
 }
