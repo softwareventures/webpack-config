@@ -11,7 +11,8 @@
     "prepare": "tsc",
     "test": "tslint --project .",
     "semantic-release": "semantic-release",
-    "prepublish": "snyk protect"
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@softwareventures/tslint-rules": "0.7.0",
