@@ -25,7 +25,8 @@
     "cz-conventional-changelog": "2.1.0",
     "semantic-release": "15.13.18",
     "tslint": "5.18.0",
-    "typescript": "3.5.3"
+    "typescript": "3.5.3",
+    "snyk": "1.189.0"
   },
   "peerDependencies": {
     "ts-loader": "^5.3.2 || ^6.0.0",
@@ -47,8 +48,7 @@
     "mini-css-extract-plugin": "^0.8.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
-    "uglifyjs-webpack-plugin": "^2.1.1",
-    "snyk": "^1.189.0"
+    "uglifyjs-webpack-plugin": "^2.1.1"
   },
   "config": {
     "commitizen": {
