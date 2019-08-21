@@ -3825,9 +3825,9 @@ less-loader@^5.0.0:
     pify "^4.0.1"
 
 less@^3.9.0:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/less/-/less-3.10.1.tgz#a1c97e3436acdfd1757916333b9906f3af7d559e"
-  integrity sha512-xlPx6vt5nAm1DGDnuv06SNQba4WnMKY5vZkgCrnyKXkDbs09kl9cc2nSS7OMufLT60IWsxUSnwr1Rkh4rkMFcg==
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/less/-/less-3.10.2.tgz#49b94da22e18ed112d9500bdb2340969dafee57f"
+  integrity sha512-crOb5r8AnIYkWss6sJNccgb20UqvDfdZhopuDG9LGfcSQY+fAKIA/W4as5+ELnfUxnDruqC7iYyeDZmC44nMnw==
   dependencies:
     clone "^2.1.2"
   optionalDependencies:
@@ -7791,10 +7791,15 @@ utila@^0.4.0, utila@~0.4:
   resolved "https://registry.yarnpkg.com/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
   integrity sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=
 
-uuid@^3.0.1, uuid@^3.3.2:
+uuid@^3.0.1:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
+
+uuid@^3.3.2:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
+  integrity sha512-pW0No1RGHgzlpHJO1nsVrHKpOEIxkGg1xB+v0ZmdNH5OAeAwzAVrCnI2/6Mtx+Uys6iaylxa+D3g4j63IKKjSQ==
 
 validate-npm-package-license@^3.0.1, validate-npm-package-license@^3.0.4:
   version "3.0.4"
