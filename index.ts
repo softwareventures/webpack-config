@@ -187,7 +187,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         ]
                     },
                     {
-                        test: /\.(jpe?g|gif|mp[34]|og[agv]|png|svg|web[mp])$/,
+                        test: /\.(eot|jpe?g|gif|mp[34]|og[agv]|png|svg|ttf|web[mp]|woff2?)$/,
                         use: {
                             loader: "file-loader",
                             options: {
