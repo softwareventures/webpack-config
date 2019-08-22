@@ -24,9 +24,9 @@
     "@types/webpack": "4.32.1",
     "cz-conventional-changelog": "3.0.2",
     "semantic-release": "15.13.24",
+    "snyk": "1.217.3",
     "tslint": "5.19.0",
-    "typescript": "3.5.3",
-    "snyk": "1.217.3"
+    "typescript": "3.5.3"
   },
   "peerDependencies": {
     "ts-loader": "^5.3.2 || ^6.0.0",
