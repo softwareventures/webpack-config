@@ -24,7 +24,7 @@
     "@types/webpack": "4.32.1",
     "cz-conventional-changelog": "3.0.2",
     "semantic-release": "15.13.24",
-    "snyk": "1.219.0",
+    "snyk": "1.220.0",
     "tslint": "5.19.0",
     "typescript": "3.5.3"
   },
