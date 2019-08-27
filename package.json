@@ -21,7 +21,7 @@
     "@types/mini-css-extract-plugin": "0.8.0",
     "@types/node": "10.14.3",
     "@types/uglifyjs-webpack-plugin": "1.1.0",
-    "@types/webpack": "^4.39.1",
+    "@types/webpack": "4.39.1",
     "cz-conventional-changelog": "3.0.2",
     "semantic-release": "15.13.24",
     "snyk": "1.221.0",
