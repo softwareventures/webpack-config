@@ -34,7 +34,7 @@
     "webpack": "^4.28.3"
   },
   "dependencies": {
-    "@softwareventures/array": "0.15.0",
+    "@softwareventures/array": "0.16.1",
     "@softwareventures/tsconfig": "^1.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^2.1.0",
