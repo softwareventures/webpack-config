@@ -28,3 +28,34 @@ patch:
         patched: '2019-07-04T02:05:08.803Z'
     - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
         patched: '2019-07-04T02:05:08.803Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libnpm > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libcipm > pacote > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libnpm > pacote > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libnpm > libnpmsearch > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libnpm > pacote > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libcipm > pacote > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libnpm > libnpmaccess > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libnpm > libnpmhook > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libnpm > libnpmorg > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libnpm > libnpmpublish > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libnpm > libnpmteam > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
+    - libnpm > npm-profile > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2019-10-04T23:58:10.738Z'
