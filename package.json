@@ -14,6 +14,7 @@
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
+  "sideEffects": false,
   "devDependencies": {
     "@softwareventures/tslint-rules": "0.7.1",
     "@types/cssnano": "4.0.0",
