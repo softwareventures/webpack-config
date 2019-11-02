@@ -24,7 +24,7 @@
     "@types/uglifyjs-webpack-plugin": "1.1.0",
     "@types/webpack": "4.39.8",
     "cz-conventional-changelog": "3.0.2",
-    "semantic-release": "15.13.29",
+    "semantic-release": "15.13.30",
     "snyk": "1.241.0",
     "tslint": "5.20.0",
     "typescript": "3.6.4"
