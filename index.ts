@@ -6,7 +6,7 @@ import HtmlWebpackPlugin = require("html-webpack-plugin");
 import {Object as JsonObject} from "json-typescript";
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import {dirname, normalize, resolve, sep} from "path";
-import UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+import TerserPlugin = require("terser-webpack-plugin");
 import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
 
 // Placeholder variables for type declarations.
@@ -206,13 +206,17 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 ? "inline-source-map"
                 : false,
             optimization: mode === "development"
-                ? {}
+                ? {
+                    minimize: false
+                }
                 : {
+                    minimize: true,
                     minimizer: [
-                        new UglifyJsPlugin({
+                        new TerserPlugin({
                             cache: true,
+                            extractComments: false,
                             parallel: true,
-                            uglifyOptions: {
+                            terserOptions: {
                                 compress: {
                                     passes: 2,
                                     unsafe: true,
@@ -220,7 +224,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                                     unsafe_proto: true
                                 },
                                 output: {
-                                    inline_script: false
+                                    inline_script: false,
+                                    comments: /^\**!|@preserve|@license/i
                                 }
                             }
                         })
