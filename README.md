@@ -53,6 +53,8 @@ We also recommend that you add a `build` and `start` script to `package.json`:
 }
 ```
 
+See [Building](#building) and [Dev Server](#dev-server) for more on these scripts.
+
 
 ## TypeScript Support
 
@@ -78,6 +80,54 @@ Any of these presets can be used as a base with project-specific overrides.
 Any options set in `tsconfig.json` will override those set by the preset. See
 [tsconfig.json in the TypeScript Handbook][2] for more information on
 configuring TypeScript.
+
+
+## Building
+
+We recommend that you set up a script in `package.json` to build your project,
+as follows:
+
+```json
+{
+  "scripts": {
+    "build": "webpack --env.production"
+  }
+}
+```
+
+You can then run the build script using npm or yarn:
+
+```bash
+npm run build
+```
+```bash
+yarn build
+```
+
+Build output goes in `dist` by default.
+
+
+## Dev Server
+
+We recommend that you set up a script in `package.json` to run the dev server,
+as follows:
+
+```json
+{
+  "scripts": {
+    "start": "webpack-dev-server"
+  }
+}
+```
+
+You can then run the dev server using npm or yarn:
+
+```bash
+npm start
+```
+```bash
+yarn start
+```
 
 
 ## See Also
