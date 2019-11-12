@@ -66,7 +66,24 @@ contents:
 }
 ```
 
+webpack-config provides several preset TypeScript configurations for different
+purposes, which can be used in place of the above:
+
+ * `@softwareventures/webpack-config/tsconfig/general`: General purpose
+   configuration suitable for most projects.
+ * `@softwareventures/webpack-config/tconfig/preact`: Configuration suitable
+   for projects using JSX with [Preact][1].
+
+Any of these presets can be used as a base with project-specific overrides.
+Any options set in `tsconfig.json` will override those set by the preset. See
+[tsconfig.json in the TypeScript Handbook][2] for more information on
+configuring TypeScript.
+
 
 ## See Also
 
  * [@softwareventures/tslint-rules](https://github.com/softwareventures/tslint-rules)
+
+
+ [1]: https://preactjs.com/
+ [2]: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
