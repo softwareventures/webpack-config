@@ -19,10 +19,10 @@ Add a dependency on this package, webpack, and webpack-dev-server, for example
 using npm or yarn:
 
 ```
-$ npm install --save-dev @softwareventures/webpack-config webpack webpack-dev-server
+$ npm install --save-dev @softwareventures/webpack-config webpack webpack-cli webpack-dev-server
 ```
 ```
-$ yarn add --dev @softwareventures/webpack-config webpack webpack-dev-server
+$ yarn add --dev @softwareventures/webpack-config webpack webpack-cli webpack-dev-server
 ```
 
 Create a `webpack.config.js` file at the root of your project with the
