@@ -2,6 +2,7 @@
   "extends": "@softwareventures/tsconfig",
   "compilerOptions": {
     "lib": ["es5", "dom"],
-    "noEmit": true
+    "noEmit": true,
+    "resolveJsonModule": true
   }
 }
