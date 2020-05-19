@@ -462,15 +462,15 @@
     semver-diff "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@softwareventures/array@0.31.0":
-  version "0.31.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.31.0.tgz#6c2db83d78a8601d0c7172885715b21ba91b5f8a"
-  integrity sha512-PBDOoblFyZlZYDkbOJTfS2zqFoqbiSs0Kyht1lQdHvmmkaSMUvx2H0eCFzNFP7Qks8/dnAZWSmRYutjYsFtwzQ==
+"@softwareventures/array@0.31.1":
+  version "0.31.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.31.1.tgz#f8ad84af73ec56eec2d0b9e29da8267d76a26ad6"
+  integrity sha512-o+nq2sD2v7Y6M3UBk62omtd1WMSZax6oRvE6iueNWGNxRc1YbDglW4FemNfe6aNQdHmhAch9MohIKgWtQgoflA==
   dependencies:
     "@softwareventures/dictionary" "^0.6.0"
     "@softwareventures/ordered" "^0.2.0"
     dictionary-types "^1.2.0"
-    tslib "^1.9.3"
+    tslib "^1.9.3 || ^2.0.0"
 
 "@softwareventures/dictionary@^0.6.0":
   version "0.6.0"
@@ -8016,6 +8016,11 @@ tslib@^1, tslib@^1.10.0, tslib@^1.11.1, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.12.0.tgz#d1fc9cacd06a1456c62f2902b361573e83d66473"
   integrity sha512-5rxCQkP0kytf4H1T4xz1imjxaUUPMvc5aWp0rJ/VMIN7ClRiH1FwFvBt8wOeMasp/epeUnmSW6CixSIePtiLqA==
+
+"tslib@^1.9.3 || ^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
+  integrity sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
 
 tslint-eslint-rules@^5.4.0:
   version "5.4.0"
