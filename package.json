@@ -57,7 +57,10 @@
   },
   "eslintConfig": {
     "root": true,
-    "extends": "@softwareventures"
+    "extends": "@softwareventures",
+    "rules": {
+      "@typescript-eslint/no-namespace": "off"
+    }
   },
   "prettier": "@softwareventures/prettier-config",
   "config": {
