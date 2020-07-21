@@ -1,11 +1,11 @@
+import {dirname, normalize, resolve, sep} from "path";
 import {fold} from "@softwareventures/array";
+import {map as dictionaryMap, merge as dictionaryMerge} from "@softwareventures/dictionary";
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import cssnano = require("cssnano");
-import {Dictionary, ReadonlyDictionary} from "dictionary-types";
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import {Object as JsonObject} from "json-typescript";
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
-import {dirname, normalize, resolve, sep} from "path";
 import TerserPlugin = require("terser-webpack-plugin");
 import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
 
@@ -261,23 +261,6 @@ export = WebpackConfig;
 
 function isAbsolute(dir: string): boolean {
     return normalize(dir + sep) === normalize(resolve(dir) + sep);
-}
-
-function dictionaryMap<T, U>(dictionary: ReadonlyDictionary<T>, f: (element: T) => U): Dictionary<U> {
-    const result: Dictionary<U> = Object.create(null);
-
-    for (const key of Object.keys(dictionary)) {
-        result[key] = f(dictionary[key]);
-    }
-
-    return result;
-}
-
-function dictionaryMerge<T>(a: ReadonlyDictionary<T>, b: ReadonlyDictionary<T>): Dictionary<T> {
-    const result: Dictionary<T> = Object.create(null);
-    Object.assign(result, a);
-    Object.assign(result, b);
-    return result;
 }
 
 function normalizeEnv(env: any): JsonObject {
