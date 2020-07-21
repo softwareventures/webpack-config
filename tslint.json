@@ -1,6 +1,0 @@
-{
-  "extends": "@softwareventures/tslint-rules",
-  "rules": {
-    "object-literal-sort-keys": false
-  }
-}
