@@ -23,58 +23,51 @@ namespace WebpackConfig {
         readonly vendor?: string;
         readonly entry?: Entry;
         readonly define?: JsonObject;
-        readonly html?: {
-            readonly template?: typeof htmlOptions.template;
-            readonly templateParameters?: typeof htmlOptions.templateParameters;
-        } | boolean;
+        readonly html?:
+            | {
+                  readonly template?: typeof htmlOptions.template;
+                  readonly templateParameters?: typeof htmlOptions.templateParameters;
+              }
+            | boolean;
         readonly css?: {
             readonly mode?: "embed-in-js" | "load-from-html";
         };
         readonly customize?: (configuration: Configuration) => Configuration;
     }
 
-    export type ProjectSource = Project | ((mode: "production" | "development", env: JsonObject) => Project);
+    export type ProjectSource =
+        | Project
+        | ((mode: "production" | "development", env: JsonObject) => Project);
 }
 
 function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) => Configuration {
     return env => {
-        const mode = env != null && env.production
-            ? "production"
-            : "development";
+        const mode = env != null && env.production ? "production" : "development";
 
-        const project = typeof projectSource === "function"
-            ? projectSource(mode, normalizeEnv(env))
-            : projectSource;
+        const project =
+            typeof projectSource === "function"
+                ? projectSource(mode, normalizeEnv(env))
+                : projectSource;
 
-        const configDir = module.parent == null
-            ? null
-            : dirname(module.parent.filename);
+        const configDir = module.parent == null ? null : dirname(module.parent.filename);
 
-        const rootDir = configDir == null
-            ? project.rootDir
-            : resolve(configDir, project.rootDir || ".");
+        const rootDir =
+            configDir == null ? project.rootDir : resolve(configDir, project.rootDir || ".");
 
         if (rootDir == null || !isAbsolute(rootDir)) {
             throw new Error("Could not determine project root path");
         }
 
-        const destDir = project.destDir == null
-            ? resolve(rootDir, "dist")
-            : resolve(rootDir, project.destDir);
+        const destDir =
+            project.destDir == null ? resolve(rootDir, "dist") : resolve(rootDir, project.destDir);
 
-        const vendor = project.vendor == null
-            ? "sv"
-            : project.vendor;
+        const vendor = project.vendor == null ? "sv" : project.vendor;
 
         const vendorCssId = vendor.replace(/[[\]]/g, "_");
 
-        const entry: WebpackConfig.Entry = project.entry == null
-            ? "./index"
-            : project.entry;
+        const entry: WebpackConfig.Entry = project.entry == null ? "./index" : project.entry;
 
-        const define: JsonObject = project.define == null
-            ? {}
-            : project.define;
+        const define: JsonObject = project.define == null ? {} : project.define;
 
         const htmlOptions: HtmlWebpackPlugin.Options = {
             title: project.title,
@@ -117,9 +110,10 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             options: {
                 importLoaders: mode === "development" ? 1 : 0,
                 modules: "local",
-                localIdentName: mode === "development"
-                    ? "[local]-[sha256:contenthash:base64:5]"
-                    : vendorCssId + "[sha256:contenthash:base64:5]",
+                localIdentName:
+                    mode === "development"
+                        ? "[local]-[sha256:contenthash:base64:5]"
+                        : vendorCssId + "[sha256:contenthash:base64:5]",
                 camelCase: true
             }
         };
@@ -138,8 +132,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             }
         };
 
-        const extractCss = mode !== "development"
-            && (!project.css || project.css.mode == null || project.css.mode === "load-from-html");
+        const extractCss =
+            mode !== "development" &&
+            (!project.css || project.css.mode == null || project.css.mode === "load-from-html");
 
         const configuration: Configuration = {
             mode,
@@ -164,25 +159,17 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     {
                         test: /\.css$/,
                         use: [
-                            extractCss
-                                ? MiniCssExtractPlugin.loader
-                                : styleLoader,
+                            extractCss ? MiniCssExtractPlugin.loader : styleLoader,
                             cssLoader,
-                            ...mode === "development"
-                                ? []
-                                : [postcssLoader]
+                            ...(mode === "development" ? [] : [postcssLoader])
                         ]
                     },
                     {
                         test: /\.less$/,
                         use: [
-                            extractCss
-                                ? MiniCssExtractPlugin.loader
-                                : styleLoader,
+                            extractCss ? MiniCssExtractPlugin.loader : styleLoader,
                             cssLoader,
-                            ...mode === "development"
-                                ? []
-                                : [postcssLoader],
+                            ...(mode === "development" ? [] : [postcssLoader]),
                             lessLoader
                         ]
                     },
@@ -191,9 +178,10 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         use: {
                             loader: "file-loader",
                             options: {
-                                name: mode === "development"
-                                    ? "[path][name]-[sha256:hash:base64:8].[ext]"
-                                    : "[sha256:hash:base64:8].[ext]"
+                                name:
+                                    mode === "development"
+                                        ? "[path][name]-[sha256:hash:base64:8].[ext]"
+                                        : "[sha256:hash:base64:8].[ext]"
                             }
                         }
                     }
@@ -202,46 +190,39 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             resolve: {
                 extensions: [".js", ".tsx", ".ts"]
             },
-            devtool: mode === "development"
-                ? "inline-source-map"
-                : false,
-            optimization: mode === "development"
-                ? {
-                    minimize: false
-                }
-                : {
-                    minimize: true,
-                    minimizer: [
-                        new TerserPlugin({
-                            cache: true,
-                            extractComments: false,
-                            parallel: true,
-                            terserOptions: {
-                                compress: {
-                                    passes: 2,
-                                    unsafe: true,
-                                    unsafe_math: true,
-                                    unsafe_proto: true
-                                },
-                                output: {
-                                    inline_script: false,
-                                    comments: /^\**!|@preserve|@license/i
-                                }
-                            }
-                        })
-                    ]
-                },
+            devtool: mode === "development" ? "inline-source-map" : false,
+            optimization:
+                mode === "development"
+                    ? {
+                          minimize: false
+                      }
+                    : {
+                          minimize: true,
+                          minimizer: [
+                              new TerserPlugin({
+                                  cache: true,
+                                  extractComments: false,
+                                  parallel: true,
+                                  terserOptions: {
+                                      compress: {
+                                          passes: 2,
+                                          unsafe: true,
+                                          unsafe_math: true,
+                                          unsafe_proto: true
+                                      },
+                                      output: {
+                                          inline_script: false,
+                                          comments: /^\**!|@preserve|@license/i
+                                      }
+                                  }
+                              })
+                          ]
+                      },
             plugins: [
-                ...mode === "development"
-                    ? []
-                    : [new CleanWebpackPlugin()],
+                ...(mode === "development" ? [] : [new CleanWebpackPlugin()]),
                 new DefinePlugin(dictionaryMap(define, value => JSON.stringify(value))),
-                ...extractCss
-                    ? [new MiniCssExtractPlugin()]
-                    : [],
-                ...project.html === false
-                    ? []
-                    : [new HtmlWebpackPlugin(htmlOptions)]
+                ...(extractCss ? [new MiniCssExtractPlugin()] : []),
+                ...(project.html === false ? [] : [new HtmlWebpackPlugin(htmlOptions)])
             ],
             output: {
                 path: destDir,
@@ -265,9 +246,11 @@ function isAbsolute(dir: string): boolean {
 
 function normalizeEnv(env: any): JsonObject {
     if (env instanceof Array) {
-        return fold(env,
+        return fold(
+            env,
             (accumulator, element) => dictionaryMerge(accumulator, normalizeEnv(element)),
-            Object.create(null));
+            Object.create(null)
+        );
     } else if (typeof env === "object") {
         return env;
     } else {

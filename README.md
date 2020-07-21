@@ -2,16 +2,13 @@
 
 Simplified and opinionated webpack configuration.
 
-This package implements a standard webpack configuration preferred by
-Software Ventures Limited, but can also be used by others.
-
+This package implements a standard webpack configuration preferred by Software
+Ventures Limited, but can also be used by others.
 
 ## Why?
 
-Configuring webpack from scratch is time consuming and complicated. This
-package provides a standard webpack configuration that is suitable for most
-projects.
-
+Configuring webpack from scratch is time consuming and complicated. This package
+provides a standard webpack configuration that is suitable for most projects.
 
 ## Setup
 
@@ -21,12 +18,13 @@ using npm or yarn:
 ```
 $ npm install --save-dev @softwareventures/webpack-config webpack webpack-cli webpack-dev-server
 ```
+
 ```
 $ yarn add --dev @softwareventures/webpack-config webpack webpack-cli webpack-dev-server
 ```
 
-Create a `webpack.config.js` file at the root of your project with the
-following contents:
+Create a `webpack.config.js` file at the root of your project with the following
+contents:
 
 ```javascript
 const config = require("@softwareventures/webpack-config");
@@ -46,15 +44,15 @@ We also recommend that you add a `build` and `start` script to `package.json`:
 
 ```json
 {
-  "scripts": {
-    "build": "webpack --env.production",
-    "start": "webpack-dev-server --open"
-  }
+    "scripts": {
+        "build": "webpack --env.production",
+        "start": "webpack-dev-server --open"
+    }
 }
 ```
 
-See [Building](#building) and [Dev Server](#dev-server) for more on these scripts.
-
+See [Building](#building) and [Dev Server](#dev-server) for more on these
+scripts.
 
 ## TypeScript Support
 
@@ -63,32 +61,32 @@ To enable TypeScript, first add a dev dependency on `ts-loader`:
 ```
 npm install --save-dev ts-loader
 ```
+
 ```
 yarn add --dev ts-loader
 ```
 
-Then create a `tsconfig.json` file at the root of your project with the following
-contents:
+Then create a `tsconfig.json` file at the root of your project with the
+following contents:
 
 ```json
 {
-  "extends": "@softwareventures/webpack-config/tsconfig/general"
+    "extends": "@softwareventures/webpack-config/tsconfig/general"
 }
 ```
 
 webpack-config provides several preset TypeScript configurations for different
 purposes, which can be used in place of the above:
 
- * `@softwareventures/webpack-config/tsconfig/general`: General purpose
-   configuration suitable for most projects.
- * `@softwareventures/webpack-config/tconfig/preact`: Configuration suitable
-   for projects using JSX with [Preact][1].
+-   `@softwareventures/webpack-config/tsconfig/general`: General purpose
+    configuration suitable for most projects.
+-   `@softwareventures/webpack-config/tconfig/preact`: Configuration suitable
+    for projects using JSX with [Preact][1].
 
-Any of these presets can be used as a base with project-specific overrides.
-Any options set in `tsconfig.json` will override those set by the preset. See
+Any of these presets can be used as a base with project-specific overrides. Any
+options set in `tsconfig.json` will override those set by the preset. See
 [tsconfig.json in the TypeScript Handbook][2] for more information on
 configuring TypeScript.
-
 
 ## Building
 
@@ -97,9 +95,9 @@ as follows:
 
 ```json
 {
-  "scripts": {
-    "build": "webpack --env.production"
-  }
+    "scripts": {
+        "build": "webpack --env.production"
+    }
 }
 ```
 
@@ -108,12 +106,12 @@ You can then run the build script using npm or yarn:
 ```bash
 npm run build
 ```
+
 ```bash
 yarn build
 ```
 
 Build output goes in `dist` by default.
-
 
 ## Dev Server
 
@@ -122,9 +120,9 @@ as follows:
 
 ```json
 {
-  "scripts": {
-    "start": "webpack-dev-server"
-  }
+    "scripts": {
+        "start": "webpack-dev-server"
+    }
 }
 ```
 
@@ -133,15 +131,14 @@ You can then run the dev server using npm or yarn:
 ```bash
 npm start
 ```
+
 ```bash
 yarn start
 ```
 
-
 ## See Also
 
- * [@softwareventures/tslint-rules](https://github.com/softwareventures/tslint-rules)
+-   [@softwareventures/tslint-rules](https://github.com/softwareventures/tslint-rules)
 
-
- [1]: https://preactjs.com/
- [2]: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+[1]: https://preactjs.com/
+[2]: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
