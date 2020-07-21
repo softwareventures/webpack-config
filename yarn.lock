@@ -509,17 +509,17 @@
     dictionary-types "^1.2.0"
     tslib "2.0.0"
 
-"@softwareventures/eslint-config@1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-1.6.0.tgz#3dc5d361680596ebd7c2f9311f468384c5f86ece"
-  integrity sha512-X0S6DXWts1NL5DIUeUyykshmNbbKwpKf/rQvfn63qF/KNglN7C3G78PpvpIbJOCNEvKzYWsY++t/URvhauszHQ==
+"@softwareventures/eslint-config@1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-1.7.0.tgz#f8e8e01e380b3f9b8c27fbaea03158aabe3a362b"
+  integrity sha512-GzeGPwBCnUYv+xox16cnid5QwbjFHumFTKMRZAiDOzhjaMqHvJcpm59CC3rEf0nXmwvfJgA8AqHeHEL0E11W3Q==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.31.0 || ^3.0.0"
     "@typescript-eslint/eslint-plugin-tslint" "^2.31.0 || ^3.0.0"
     "@typescript-eslint/parser" "^2.31.0 || ^3.0.0"
     eslint-config-prettier "^6.11.0"
     eslint-plugin-import "^2.20.2"
-    eslint-plugin-jsdoc "^25.0.1 || ^26.0.0 || ^27.0.0 || ^28.0.0 || ^29.0.0"
+    eslint-plugin-jsdoc "^25.0.1 || ^26.0.0 || ^27.0.0 || ^28.0.0 || ^29.0.0 || ^30.0.0"
     eslint-plugin-prefer-arrow "^1.2.1"
     tslib "^1.11.2 || ^2.0.0"
     tslint "^6.1.2"
@@ -2813,10 +2813,10 @@ eslint-plugin-import@^2.20.2:
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
 
-"eslint-plugin-jsdoc@^25.0.1 || ^26.0.0 || ^27.0.0 || ^28.0.0 || ^29.0.0":
-  version "29.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-29.2.0.tgz#40b1da463847750fe5aafea7182145c4108e0ab7"
-  integrity sha512-B1a8LWPkkxyxIp4y3pnRQR18j03Wp+V9gDE7IjQG/MvWAzp5gqXM0q71gXRAZMvWUjujAsNg8B9v1csl+/zkvw==
+"eslint-plugin-jsdoc@^25.0.1 || ^26.0.0 || ^27.0.0 || ^28.0.0 || ^29.0.0 || ^30.0.0":
+  version "30.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-30.0.3.tgz#358896c8114ccbee765774b16f64fd7c952309b1"
+  integrity sha512-EviSu0Hgc9Bhz00WhA6829KYC9BaP6JWoycOTA1xFxjQ/2XguRlB3r6nGNA/jkmMDQp5dTQ22s1kAJIaC+dE8Q==
   dependencies:
     comment-parser "^0.7.5"
     debug "^4.1.1"
@@ -5144,12 +5144,12 @@ lodash.without@~4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.without/-/lodash.without-4.4.0.tgz#3cd4574a00b67bae373a94b748772640507b7aac"
   integrity sha1-PNRXSgC2e643OpS3SHcmQFB7eqw=
 
-lodash@4.17.15, lodash@^4.17.12, lodash@^4.17.15, lodash@^4.17.3, lodash@^4.17.4:
+lodash@4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
-lodash@^4.17.14, lodash@^4.17.19:
+lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.3, lodash@^4.17.4:
   version "4.17.19"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
   integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
