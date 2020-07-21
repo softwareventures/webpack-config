@@ -10,10 +10,10 @@ import TerserPlugin = require("terser-webpack-plugin");
 import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
 
 // Placeholder variables for type declarations.
-let webpackConfiguration: Required<Configuration>; // tslint:disable-line:prefer-const
-let htmlOptions: Required<HtmlWebpackPlugin.Options>; // tslint:disable-line:prefer-const
+let webpackConfiguration: Required<Configuration>;
+let htmlOptions: Required<HtmlWebpackPlugin.Options>;
 
-namespace WebpackConfig { // tslint:disable-line:no-namespace
+namespace WebpackConfig {
     export type Entry = typeof webpackConfiguration.entry;
 
     export interface Project {
