@@ -58,8 +58,16 @@ See [Building](#building) and [Dev Server](#dev-server) for more on these script
 
 ## TypeScript Support
 
-webpack-config supports TypeScript out of the box. To enable TypeScript,
-create a `tsconfig.json` file to the root of your project with the following
+To enable TypeScript, first add a dev dependency on `ts-loader`:
+
+```
+npm install --save-dev ts-loader
+```
+```
+yarn add --dev ts-loader
+```
+
+Then create a `tsconfig.json` file at the root of your project with the following
 contents:
 
 ```json
