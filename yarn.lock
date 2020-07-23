@@ -501,10 +501,10 @@
     dictionary-types "^1.2.0"
     tslib "2.0.0"
 
-"@softwareventures/eslint-config@2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-2.0.3.tgz#ab22fd3fd8b706edad183ebcbab8e99c47b7bb4e"
-  integrity sha512-KDZa36mIDOjrc4NgpDSG/0cpU0dxWTTIe6lSA9OaLxZD84Gnx9WpoKpbKUhFR2pAQp5E1BQWNqec6V8uwGj55g==
+"@softwareventures/eslint-config@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-2.1.0.tgz#d51d58a30c2d860421b05e76e79d0dd40eb913ac"
+  integrity sha512-QSFvYcdGI5fC2dJO3lQxdhzqVnQC+O9T6cqm6qod8c3nI3HPDT7FbVZIu7zyOLo/STIYeQanDEr11i6psVi5cw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.31.0 || ^3.0.0"
     "@typescript-eslint/eslint-plugin-tslint" "^2.31.0 || ^3.0.0"
