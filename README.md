@@ -7,7 +7,7 @@ Ventures Limited, but can also be used by others.
 
 ## Why?
 
-Configuring webpack from scratch is time consuming and complicated. This package
+Configuring webpack from scratch is time-consuming and complicated. This package
 provides a standard webpack configuration that is suitable for most projects.
 
 ## Setup
