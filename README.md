@@ -138,7 +138,7 @@ yarn start
 
 ## See Also
 
--   [@softwareventures/tslint-rules](https://github.com/softwareventures/tslint-rules)
+-   [@softwareventures/eslint-config](https://github.com/softwareventures/eslint-config)
 
 [1]: https://preactjs.com/
 [2]: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
