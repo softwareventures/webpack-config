@@ -200,10 +200,7 @@ export default function config(projectSource: ProjectSource): (env: any) => Conf
         }
 
         const styleLoader: RuleSetUse = {
-            loader: "style-loader",
-            options: {
-                hmr: mode === "development"
-            }
+            loader: "style-loader"
         };
 
         const cssLoader: RuleSetUse = {
