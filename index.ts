@@ -209,12 +209,18 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             loader: "css-loader",
             options: {
                 importLoaders: mode === "development" ? 1 : 0,
-                modules: "local",
-                localIdentName:
-                    mode === "development"
-                        ? "[local]-[sha256:contenthash:base64:5]"
-                        : vendorCssId + "[sha256:contenthash:base64:5]",
-                camelCase: true
+                esModule: true,
+                modules: {
+                    compileType: "module",
+                    mode: "local",
+                    localIdentName:
+                        mode === "development"
+                            ? "[local]-[sha256:contenthash:base64:5]"
+                            : vendorCssId + "[sha256:contenthash:base64:5]",
+                    namedExport: true,
+                    exportGlobals: false,
+                    exportLocalsConvention: "camelCase"
+                }
             }
         };
 
