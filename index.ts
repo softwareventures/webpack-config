@@ -284,6 +284,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         use: {
                             loader: "file-loader",
                             options: {
+                                esModule: true,
                                 name:
                                     mode === "development"
                                         ? "[path][name]-[sha256:hash:base64:8].[ext]"
