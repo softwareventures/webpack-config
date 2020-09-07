@@ -235,7 +235,9 @@ export default function config(projectSource: ProjectSource): (env: any) => Conf
         const lessLoader: RuleSetUse = {
             loader: "less-loader",
             options: {
-                strictUnits: true
+                lessOptions: {
+                    strictUnits: true
+                }
             }
         };
 
