@@ -288,10 +288,10 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@softwareventures/array@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-2.0.0.tgz#37e6399ba00f137ccbbf3777ff1cfde740296750"
-  integrity sha512-FsIyQgbvHJEamdA/maibJ9p50u5ehRe+bFzVb/OSkjMemlzQ98EqRwTUHIf/YOsb5gPmQJxp9yTg0PMMSabYSg==
+"@softwareventures/array@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-3.1.0.tgz#27d05b4d5634fd8df540a11a9ca33502e00b5d21"
+  integrity sha512-XT8sJcS7tryBoN1WJChUu4dmpaAhHOqIBTISGnjNXvVfXEz9xxtTcHmseXF7SvMd7ozk2VlftyB/J/K1CC6CEw==
   dependencies:
     "@softwareventures/dictionary" "^0.6.0 || ^0.7.0"
     "@softwareventures/ordered" "^0.2.0"
