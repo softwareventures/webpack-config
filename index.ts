@@ -228,7 +228,9 @@ export default function config(projectSource: ProjectSource): (env: any) => Conf
         const postcssLoader: RuleSetUse = {
             loader: "postcss-loader",
             options: {
-                plugins: [cssnano]
+                postcssOptions: {
+                    plugins: [cssnano]
+                }
             }
         };
 
