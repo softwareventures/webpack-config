@@ -2,11 +2,11 @@ import {dirname, normalize, resolve, sep} from "path";
 import {fold} from "@softwareventures/array";
 import {map as dictionaryMap, merge as dictionaryMerge} from "@softwareventures/dictionary";
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
-import cssnano = require("cssnano");
-import HtmlWebpackPlugin = require("html-webpack-plugin");
+import cssnano from "cssnano";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 import {Object as JsonObject} from "json-typescript";
-import MiniCssExtractPlugin = require("mini-css-extract-plugin");
-import TerserPlugin = require("terser-webpack-plugin");
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
 
 // Placeholder variables for type declarations.
