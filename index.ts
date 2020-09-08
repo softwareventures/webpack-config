@@ -236,6 +236,7 @@ export default function config(projectSource: ProjectSource): (env: any) => Conf
             loader: "less-loader",
             options: {
                 lessOptions: {
+                    math: "parens-division",
                     strictUnits: true
                 }
             }
