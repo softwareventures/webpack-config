@@ -311,7 +311,7 @@ export default function config(projectSource: ProjectSource): (env: any) => Conf
                           minimizer: [
                               new TerserPlugin({
                                   cache: true,
-                                  extractComments: false,
+                                  extractComments: /^\**!|@preserve|@license/i,
                                   parallel: true,
                                   terserOptions: {
                                       compress: {
@@ -322,7 +322,7 @@ export default function config(projectSource: ProjectSource): (env: any) => Conf
                                       },
                                       output: {
                                           inline_script: false,
-                                          comments: /^\**!|@preserve|@license/i
+                                          comments: false
                                       }
                                   }
                               })
