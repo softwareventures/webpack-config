@@ -56,14 +56,19 @@ scripts.
 
 ## TypeScript Support
 
-To enable TypeScript, first add a dev dependency on `ts-loader`:
+To enable TypeScript, first add dev dependencies on `ts-loader` and
+`typescript`, and a dependency on `tslib`:
 
 ```
-npm install --save-dev ts-loader
+npm install --save-dev ts-loader typescript
+npm install --save tslib
 ```
 
+or
+
 ```
-yarn add --dev ts-loader
+yarn add --dev ts-loader typescript
+yarn add tslib
 ```
 
 Then create a `tsconfig.json` file at the root of your project with the
