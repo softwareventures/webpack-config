@@ -1,6 +1,7 @@
 {
   "name": "@softwareventures/webpack-config",
   "version": "0.0.0-development",
+  "type": "module",
   "description": "Standard webpack configuration for Software Ventures Limited",
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
   "license": "ISC",
