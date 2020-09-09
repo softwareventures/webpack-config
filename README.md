@@ -27,9 +27,9 @@ Create a `webpack.config.js` file at the root of your project with the following
 contents:
 
 ```javascript
-import config from "@softwareventures/webpack-config";
+const config = require("@softwareventures/webpack-config");
 
-export default config({
+module.exports = config({
     title: "Name of your app"
 });
 ```
