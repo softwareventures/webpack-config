@@ -219,7 +219,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                             : vendorCssId + "[sha256:contenthash:base64:5]",
                     namedExport: false,
                     exportGlobals: true,
-                    exportLocalsConvention: "camelCaseOnly"
+                    exportLocalsConvention: "asIs"
                 }
             }
         };
