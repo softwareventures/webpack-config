@@ -192,8 +192,10 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             if (typeof project.html === "object" && project.html.template != null) {
                 htmlOptions.template = project.html.template;
             } else {
-                htmlOptions.templateContent =
-                    '<!DOCTYPE html><meta charset="UTF-8"><title><%=htmlWebpackPlugin.options.title%></title>';
+                htmlOptions.templateContent = (parameters: any) =>
+                    `<!DOCTYPE html><html><head><title>${String(
+                        parameters?.htmlWebpackPlugin?.options?.title ?? ""
+                    )}</title></head><body></body></html>`;
             }
 
             if (typeof project.html === "object" && project.html.templateParameters != null) {
