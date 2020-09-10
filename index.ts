@@ -176,6 +176,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 collapseBooleanAttributes: true,
                 collapseWhitespace: true,
                 decodeEntities: true,
+                keepClosingSlash: false,
                 removeAttributeQuotes: true,
                 removeComments: true,
                 removeOptionalTags: true,
