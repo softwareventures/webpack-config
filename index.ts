@@ -177,6 +177,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 collapseWhitespace: true,
                 decodeEntities: true,
                 keepClosingSlash: false,
+                minifyCSS: true,
+                minifyJS: true,
                 removeAttributeQuotes: true,
                 removeComments: true,
                 removeOptionalTags: true,
