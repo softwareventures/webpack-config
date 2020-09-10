@@ -217,7 +217,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         mode === "development"
                             ? "[local]-[sha256:contenthash:base64:5]"
                             : vendorCssId + "[sha256:contenthash:base64:5]",
-                    namedExport: true,
+                    namedExport: false,
                     exportGlobals: false,
                     exportLocalsConvention: "camelCaseOnly"
                 }
