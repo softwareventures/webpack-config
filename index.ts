@@ -176,6 +176,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 collapseBooleanAttributes: true,
                 collapseWhitespace: true,
                 decodeEntities: true,
+                keepClosingSlash: false,
+                minifyCSS: true,
+                minifyJS: true,
                 removeAttributeQuotes: true,
                 removeComments: true,
                 removeOptionalTags: true,
@@ -191,6 +194,11 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         if (project.html != null && project.html !== false) {
             if (typeof project.html === "object" && project.html.template != null) {
                 htmlOptions.template = project.html.template;
+            } else {
+                htmlOptions.templateContent = (parameters: any) =>
+                    `<!DOCTYPE html><html><head><title>${String(
+                        parameters?.htmlWebpackPlugin?.options?.title ?? ""
+                    )}</title></head><body></body></html>`;
             }
 
             if (typeof project.html === "object" && project.html.templateParameters != null) {
@@ -199,36 +207,44 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         }
 
         const styleLoader: RuleSetUse = {
-            loader: "style-loader",
-            options: {
-                hmr: mode === "development"
-            }
+            loader: "style-loader"
         };
 
         const cssLoader: RuleSetUse = {
             loader: "css-loader",
             options: {
                 importLoaders: mode === "development" ? 1 : 0,
-                modules: "local",
-                localIdentName:
-                    mode === "development"
-                        ? "[local]-[sha256:contenthash:base64:5]"
-                        : vendorCssId + "[sha256:contenthash:base64:5]",
-                camelCase: true
+                esModule: true,
+                modules: {
+                    compileType: "module",
+                    mode: "local",
+                    localIdentName:
+                        mode === "development"
+                            ? "[local]-[sha256:contenthash:base64:5]"
+                            : vendorCssId + "[sha256:contenthash:base64:5]",
+                    namedExport: false,
+                    exportGlobals: true,
+                    exportLocalsConvention: "asIs"
+                }
             }
         };
 
         const postcssLoader: RuleSetUse = {
             loader: "postcss-loader",
             options: {
-                plugins: [cssnano]
+                postcssOptions: {
+                    plugins: [cssnano]
+                }
             }
         };
 
         const lessLoader: RuleSetUse = {
             loader: "less-loader",
             options: {
-                strictUnits: true
+                lessOptions: {
+                    math: "parens-division",
+                    strictUnits: true
+                }
             }
         };
 
@@ -278,6 +294,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         use: {
                             loader: "file-loader",
                             options: {
+                                esModule: true,
                                 name:
                                     mode === "development"
                                         ? "[path][name]-[sha256:hash:base64:8].[ext]"
@@ -301,7 +318,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                           minimizer: [
                               new TerserPlugin({
                                   cache: true,
-                                  extractComments: false,
+                                  extractComments: /^\**!|@preserve|@license/i,
                                   parallel: true,
                                   terserOptions: {
                                       compress: {
@@ -312,7 +329,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                                       },
                                       output: {
                                           inline_script: false,
-                                          comments: /^\**!|@preserve|@license/i
+                                          comments: false
                                       }
                                   }
                               })
