@@ -259,7 +259,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             module: {
                 rules: [
                     {
-                        test: /\.tsx?$/,
+                        test: /\.tsx?$/i,
                         use: {
                             loader: "ts-loader",
                             options: {
@@ -273,7 +273,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         exclude: /\/node_modules\//
                     },
                     {
-                        test: /\.css$/,
+                        test: /\.css$/i,
                         use: [
                             extractCss ? MiniCssExtractPlugin.loader : styleLoader,
                             cssLoader,
@@ -281,7 +281,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         ]
                     },
                     {
-                        test: /\.less$/,
+                        test: /\.less$/i,
                         use: [
                             extractCss ? MiniCssExtractPlugin.loader : styleLoader,
                             cssLoader,
@@ -290,7 +290,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         ]
                     },
                     {
-                        test: /\.(eot|gif|jpe?g|mp[34]|og[agv]|png|svg|ttf|web[mp]|woff2?)$/,
+                        test: /\.(eot|gif|jpe?g|mp[34]|og[agv]|png|svg|ttf|web[mp]|woff2?)$/i,
                         use: {
                             loader: "file-loader",
                             options: {
