@@ -360,6 +360,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 ...(extractCss ? [new MiniCssExtractPlugin()] : []),
                 ...(project.html === false ? [] : [new HtmlWebpackPlugin(htmlOptions)])
             ],
+            devServer: {
+                contentBase: false
+            },
             output: {
                 path: destDir,
                 devtoolModuleFilenameTemplate: "[resource-path]?[loaders]"
