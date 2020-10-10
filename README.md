@@ -78,7 +78,10 @@ following contents:
 {
     "extends": "@softwareventures/webpack-config/tsconfig/general",
     "compilerOptions": {
-        "types": ["webpack-env", "@softwareventures/webpack-config/asset-loaders"]
+        "types": [
+            "webpack-env",
+            "@softwareventures/webpack-config/asset-loaders"
+        ]
     }
 }
 ```
