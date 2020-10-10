@@ -1,14 +1,10 @@
-/* eslint-disable no-duplicate-imports */
-
 declare module "*.css" {
-    import {Dictionary} from "dictionary-types";
-    const mappings: Dictionary<string>;
+    const mappings: {readonly [key: string]: string};
     export default mappings;
 }
 
 declare module "*.less" {
-    import {Dictionary} from "dictionary-types";
-    const mappings: Dictionary<string>;
+    const mappings: {readonly [key: string]: string};
     export default mappings;
 }
 
