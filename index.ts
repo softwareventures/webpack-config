@@ -210,11 +210,11 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         }
 
         const styleLoader: RuleSetUse = {
-            loader: "style-loader"
+            loader: require.resolve("style-loader")
         };
 
         const cssLoader: RuleSetUse = {
-            loader: "css-loader",
+            loader: require.resolve("css-loader"),
             options: {
                 importLoaders: mode === "development" ? 1 : 0,
                 esModule: true,
@@ -233,7 +233,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         };
 
         const postcssLoader: RuleSetUse = {
-            loader: "postcss-loader",
+            loader: require.resolve("postcss-loader"),
             options: {
                 postcssOptions: {
                     plugins: [cssnano]
@@ -242,7 +242,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         };
 
         const lessLoader: RuleSetUse = {
-            loader: "less-loader",
+            loader: require.resolve("less-loader"),
             options: {
                 lessOptions: {
                     math: "parens-division",
@@ -256,7 +256,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             (!project.css || project.css.mode == null || project.css.mode === "load-from-html");
 
         const fileLoader = {
-            loader: "file-loader",
+            loader: require.resolve("file-loader"),
             options: {
                 esModule: true,
                 name:
@@ -290,9 +290,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         test: /\.html?$/i,
                         use: [
                             fileLoader,
-                            "extract-loader",
+                            require.resolve("extract-loader"),
                             {
-                                loader: "html-loader",
+                                loader: require.resolve("html-loader"),
                                 options: {
                                     minimize: htmlMinifierOptions,
                                     esModule: true

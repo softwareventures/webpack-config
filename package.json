@@ -60,6 +60,23 @@
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^4.0.0"
   },
+  "bundledDependencies": [
+    "clean-webpack-plugin",
+    "css-loader",
+    "cssnano",
+    "extract-loader",
+    "file-loader",
+    "html-loader",
+    "html-minifier-terser",
+    "html-webpack-plugin",
+    "less",
+    "less-loader",
+    "mini-css-extract-plugin",
+    "postcss",
+    "postcss-loader",
+    "style-loader",
+    "terser-webpack-plugin"
+  ],
   "eslintConfig": {
     "root": true,
     "extends": "@softwareventures",
