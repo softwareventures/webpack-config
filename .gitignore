@@ -7,6 +7,7 @@ npm-debug.log*
 *.js
 *.d.ts
 *.js.map
+!/asset-loaders.d.ts
 !/types/*.d.ts
 
 # macOS
