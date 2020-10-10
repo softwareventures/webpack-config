@@ -210,11 +210,11 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         }
 
         const styleLoader: RuleSetUse = {
-            loader: require.resolve("style-loader")
+            loader: "style-loader"
         };
 
         const cssLoader: RuleSetUse = {
-            loader: require.resolve("css-loader"),
+            loader: "css-loader",
             options: {
                 importLoaders: mode === "development" ? 1 : 0,
                 esModule: true,
@@ -233,7 +233,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         };
 
         const postcssLoader: RuleSetUse = {
-            loader: require.resolve("postcss-loader"),
+            loader: "postcss-loader",
             options: {
                 postcssOptions: {
                     plugins: [cssnano]
@@ -242,7 +242,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         };
 
         const lessLoader: RuleSetUse = {
-            loader: require.resolve("less-loader"),
+            loader: "less-loader",
             options: {
                 lessOptions: {
                     math: "parens-division",
@@ -256,7 +256,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             (!project.css || project.css.mode == null || project.css.mode === "load-from-html");
 
         const fileLoader = {
-            loader: require.resolve("file-loader"),
+            loader: "file-loader",
             options: {
                 esModule: true,
                 name:
@@ -290,9 +290,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         test: /\.html?$/i,
                         use: [
                             fileLoader,
-                            require.resolve("extract-loader"),
+                            "extract-loader",
                             {
-                                loader: require.resolve("html-loader"),
+                                loader: "html-loader",
                                 options: {
                                     minimize: htmlMinifierOptions,
                                     esModule: true
@@ -325,6 +325,10 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             },
             resolve: {
                 extensions: [".js", ".tsx", ".ts"],
+                symlinks: false
+            },
+            resolveLoader: {
+                modules: [resolve(__dirname, "node_modules"), "node_modules"],
                 symlinks: false
             },
             devtool: mode === "development" ? "inline-source-map" : false,
