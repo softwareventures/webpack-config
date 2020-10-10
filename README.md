@@ -77,7 +77,9 @@ following contents:
 ```json
 {
     "extends": "@softwareventures/webpack-config/tsconfig/general",
-    "types": ["webpack-env", "@softwareventures/webpack-config/asset-loaders"]
+    "compilerOptions": {
+        "types": ["webpack-env", "@softwareventures/webpack-config/asset-loaders"]
+    }
 }
 ```
 
