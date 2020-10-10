@@ -324,7 +324,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 ]
             },
             resolve: {
-                extensions: [".js", ".tsx", ".ts"]
+                extensions: [".js", ".tsx", ".ts"],
+                symlinks: false
             },
             devtool: mode === "development" ? "inline-source-map" : false,
             optimization:
