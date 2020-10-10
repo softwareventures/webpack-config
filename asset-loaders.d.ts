@@ -3,13 +3,13 @@
 declare module "*.css" {
     import {Dictionary} from "dictionary-types";
     const mappings: Dictionary<string>;
-    export = mappings;
+    export default mappings;
 }
 
 declare module "*.less" {
     import {Dictionary} from "dictionary-types";
     const mappings: Dictionary<string>;
-    export = mappings;
+    export default mappings;
 }
 
 declare module "*.jpeg" {
