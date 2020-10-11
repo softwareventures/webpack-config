@@ -67,3 +67,13 @@ declare module "*.webp" {
     const url: string;
     export default url;
 }
+
+declare module "*.html" {
+    const text: string;
+    export default text;
+}
+
+declare module "*.htm" {
+    const text: string;
+    export default text;
+}
