@@ -92,6 +92,8 @@ namespace WebpackConfig {
                    * The template file will be interpreted as a
                    * [Lodash template](https://lodash.com/docs/4.17.15#template).
                    *
+                   * The path to the template file must not contain an exclamation mark (`!`).
+                   *
                    * @see https://github.com/jantimon/html-webpack-plugin#writing-your-own-templates
                    */
                   readonly template?: typeof htmlOptions.template;
@@ -196,7 +198,12 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
 
         if (project.html != null && project.html !== false) {
             if (typeof project.html === "object" && project.html.template != null) {
-                htmlOptions.template = project.html.template;
+                if (project.html.template.includes("!")) {
+                    throw new Error(
+                        "Path to HTML template may not contain an exclamation mark (`!`)"
+                    );
+                }
+                htmlOptions.template = `!!ejs-loader?{esModule:false}!${project.html.template}`;
             } else {
                 htmlOptions.templateContent = (parameters: any) =>
                     `<!DOCTYPE html><html><head><title>${String(
