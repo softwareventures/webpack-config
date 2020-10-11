@@ -3,6 +3,6 @@
   "compilerOptions": {
     "module": "CommonJS",
     "lib": ["es2015"],
-    "types": []
+    "types": ["webpack-dev-server"]
   }
 }

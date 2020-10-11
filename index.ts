@@ -8,6 +8,7 @@ import {Object as JsonObject} from "json-typescript";
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import TerserPlugin = require("terser-webpack-plugin");
 import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
+import {Options as HtmlMinifierOptions} from "html-minifier-terser";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>;
@@ -171,26 +172,28 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
 
         const define: JsonObject = project.define == null ? {} : project.define;
 
+        const htmlMinifierOptions: HtmlMinifierOptions = {
+            collapseBooleanAttributes: true,
+            collapseWhitespace: true,
+            decodeEntities: true,
+            keepClosingSlash: false,
+            minifyCSS: true,
+            minifyJS: true,
+            removeAttributeQuotes: true,
+            removeComments: true,
+            removeOptionalTags: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            sortAttributes: true,
+            sortClassName: true,
+            useShortDoctype: true
+        };
+
         const htmlOptions: HtmlWebpackPlugin.Options = {
             title: project.title,
             inject: "head",
-            minify: {
-                collapseBooleanAttributes: true,
-                collapseWhitespace: true,
-                decodeEntities: true,
-                keepClosingSlash: false,
-                minifyCSS: true,
-                minifyJS: true,
-                removeAttributeQuotes: true,
-                removeComments: true,
-                removeOptionalTags: true,
-                removeRedundantAttributes: true,
-                removeScriptTypeAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                sortAttributes: true,
-                sortClassName: true,
-                useShortDoctype: true
-            }
+            minify: htmlMinifierOptions
         };
 
         if (project.html != null && project.html !== false) {
@@ -200,7 +203,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         "Path to HTML template may not contain an exclamation mark (`!`)"
                     );
                 }
-                htmlOptions.template = `!!ejs-loader?{esModule:false}!${project.html.template}`;
+                htmlOptions.template = `!!${require.resolve("ejs-loader")}?{esModule:false}!${
+                    project.html.template
+                }`;
             } else {
                 htmlOptions.templateContent = (parameters: any) =>
                     `<!DOCTYPE html><html><head><title>${String(
@@ -214,11 +219,11 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         }
 
         const styleLoader: RuleSetUse = {
-            loader: "style-loader"
+            loader: require.resolve("style-loader")
         };
 
         const cssLoader: RuleSetUse = {
-            loader: "css-loader",
+            loader: require.resolve("css-loader"),
             options: {
                 importLoaders: mode === "development" ? 1 : 0,
                 esModule: true,
@@ -237,7 +242,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         };
 
         const postcssLoader: RuleSetUse = {
-            loader: "postcss-loader",
+            loader: require.resolve("postcss-loader"),
             options: {
                 postcssOptions: {
                     plugins: [cssnano]
@@ -246,7 +251,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         };
 
         const lessLoader: RuleSetUse = {
-            loader: "less-loader",
+            loader: require.resolve("less-loader"),
             options: {
                 lessOptions: {
                     math: "parens-division",
@@ -258,6 +263,17 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         const extractCss =
             mode !== "development" &&
             (!project.css || project.css.mode == null || project.css.mode === "load-from-html");
+
+        const fileLoader = {
+            loader: require.resolve("file-loader"),
+            options: {
+                esModule: true,
+                name:
+                    mode === "development"
+                        ? "[path][name]-[sha256:hash:base64:8].[ext]"
+                        : "[sha256:hash:base64:8].[ext]"
+            }
+        };
 
         const configuration: Configuration = {
             mode,
@@ -280,6 +296,20 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         exclude: /\/node_modules\//
                     },
                     {
+                        test: /\.html?$/i,
+                        use: [
+                            fileLoader,
+                            require.resolve("extract-loader"),
+                            {
+                                loader: require.resolve("html-loader"),
+                                options: {
+                                    minimize: htmlMinifierOptions,
+                                    esModule: true
+                                }
+                            }
+                        ]
+                    },
+                    {
                         test: /\.css$/i,
                         use: [
                             extractCss ? MiniCssExtractPlugin.loader : styleLoader,
@@ -298,16 +328,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     },
                     {
                         test: /\.(eot|gif|jpe?g|mp[34]|og[agv]|png|svg|ttf|web[mp]|woff2?)$/i,
-                        use: {
-                            loader: "file-loader",
-                            options: {
-                                esModule: true,
-                                name:
-                                    mode === "development"
-                                        ? "[path][name]-[sha256:hash:base64:8].[ext]"
-                                        : "[sha256:hash:base64:8].[ext]"
-                            }
-                        }
+                        use: fileLoader
                     }
                 ]
             },
@@ -348,6 +369,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 ...(extractCss ? [new MiniCssExtractPlugin()] : []),
                 ...(project.html === false ? [] : [new HtmlWebpackPlugin(htmlOptions)])
             ],
+            devServer: {
+                contentBase: false
+            },
             output: {
                 path: destDir,
                 devtoolModuleFilenameTemplate: "[resource-path]?[loaders]"
