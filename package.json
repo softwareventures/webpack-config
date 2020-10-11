@@ -65,6 +65,7 @@
     "clean-webpack-plugin",
     "css-loader",
     "cssnano",
+    "ejs-loader",
     "extract-loader",
     "file-loader",
     "html-loader",

@@ -203,7 +203,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         "Path to HTML template may not contain an exclamation mark (`!`)"
                     );
                 }
-                htmlOptions.template = `!!ejs-loader?{esModule:false}!${project.html.template}`;
+                htmlOptions.template = `!!${require.resolve("ejs-loader")}?{esModule:false}!${project.html.template}`;
             } else {
                 htmlOptions.templateContent = (parameters: any) =>
                     `<!DOCTYPE html><html><head><title>${String(
