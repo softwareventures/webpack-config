@@ -1,18 +1,18 @@
 import {dirname, normalize, resolve, sep} from "path";
 import {fold} from "@softwareventures/array";
 import {map as dictionaryMap, merge as dictionaryMerge} from "@softwareventures/dictionary";
-import {CleanWebpackPlugin} from "clean-webpack-plugin";
+// import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import cssnano = require("cssnano");
-import HtmlWebpackPlugin = require("html-webpack-plugin");
+// import HtmlWebpackPlugin = require("html-webpack-plugin");
 import {Object as JsonObject} from "json-typescript";
-import MiniCssExtractPlugin = require("mini-css-extract-plugin");
-import TerserPlugin = require("terser-webpack-plugin");
+// import MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// import TerserPlugin = require("terser-webpack-plugin");
 import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
 import {Options as HtmlMinifierOptions} from "html-minifier-terser";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>;
-let htmlOptions: Required<HtmlWebpackPlugin.Options>;
+// let htmlOptions: Required<HtmlWebpackPlugin.Options>;
 
 namespace WebpackConfig {
     /** An entry point or entry points as defined by webpack.
@@ -69,39 +69,40 @@ namespace WebpackConfig {
          * @default {} */
         readonly define?: JsonObject;
 
-        /** Configures webpack to generate an index.html file that loads the
-         * entry points.
-         *
-         * To generate an index.html file with the default settings, set this
-         * field to `true`.
-         *
-         * To suppress generation of an index.html file, set this field to
-         * `false`.
-         *
-         * The generate an index.html file with custom settings, set this field
-         * to an object that specifies the desired settings.
-         *
-         * @default true */
-        readonly html?:
-            | {
-                  /** Path to a template file used to generate index.html.
-                   *
-                   * The path will be resolved relative to the resolved root directory
-                   * (`this.rootDir`).
-                   *
-                   * The template file will be interpreted as a
-                   * [Lodash template](https://lodash.com/docs/4.17.15#template).
-                   *
-                   * The path to the template file must not contain an exclamation mark (`!`).
-                   *
-                   * @see https://github.com/jantimon/html-webpack-plugin#writing-your-own-templates
-                   */
-                  readonly template?: typeof htmlOptions.template;
-
-                  /** Additional parameters to pass to the index.html template. */
-                  readonly templateParameters?: typeof htmlOptions.templateParameters;
-              }
-            | boolean;
+        // TODO
+        // /** Configures webpack to generate an index.html file that loads the
+        //  * entry points.
+        //  *
+        //  * To generate an index.html file with the default settings, set this
+        //  * field to `true`.
+        //  *
+        //  * To suppress generation of an index.html file, set this field to
+        //  * `false`.
+        //  *
+        //  * The generate an index.html file with custom settings, set this field
+        //  * to an object that specifies the desired settings.
+        //  *
+        //  * @default true */
+        // readonly html?:
+        //     | {
+        //           /** Path to a template file used to generate index.html.
+        //            *
+        //            * The path will be resolved relative to the resolved root directory
+        //            * (`this.rootDir`).
+        //            *
+        //            * The template file will be interpreted as a
+        //            * [Lodash template](https://lodash.com/docs/4.17.15#template).
+        //            *
+        //            * The path to the template file must not contain an exclamation mark (`!`).
+        //            *
+        //            * @see https://github.com/jantimon/html-webpack-plugin#writing-your-own-templates
+        //            */
+        //           readonly template?: typeof htmlOptions.template;
+        //
+        //           /** Additional parameters to pass to the index.html template. */
+        //           readonly templateParameters?: typeof htmlOptions.templateParameters;
+        //       }
+        //     | boolean;
 
         /** Options that control how webpack handles CSS. */
         readonly css?: {
@@ -190,33 +191,34 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             useShortDoctype: true
         };
 
-        const htmlOptions: HtmlWebpackPlugin.Options = {
-            title: project.title,
-            inject: "head",
-            minify: htmlMinifierOptions
-        };
-
-        if (project.html != null && project.html !== false) {
-            if (typeof project.html === "object" && project.html.template != null) {
-                if (project.html.template.includes("!")) {
-                    throw new Error(
-                        "Path to HTML template may not contain an exclamation mark (`!`)"
-                    );
-                }
-                htmlOptions.template = `!!${require.resolve("ejs-loader")}?{esModule:false}!${
-                    project.html.template
-                }`;
-            } else {
-                htmlOptions.templateContent = (parameters: any) =>
-                    `<!DOCTYPE html><html><head><title>${String(
-                        parameters?.htmlWebpackPlugin?.options?.title ?? ""
-                    )}</title></head><body></body></html>`;
-            }
-
-            if (typeof project.html === "object" && project.html.templateParameters != null) {
-                htmlOptions.templateParameters = project.html.templateParameters;
-            }
-        }
+        // TODO
+        // const htmlOptions: HtmlWebpackPlugin.Options = {
+        //     title: project.title,
+        //     inject: "head",
+        //     minify: htmlMinifierOptions
+        // };
+        //
+        // if (project.html != null && project.html !== false) {
+        //     if (typeof project.html === "object" && project.html.template != null) {
+        //         if (project.html.template.includes("!")) {
+        //             throw new Error(
+        //                 "Path to HTML template may not contain an exclamation mark (`!`)"
+        //             );
+        //         }
+        //         htmlOptions.template = `!!${require.resolve("ejs-loader")}?{esModule:false}!${
+        //         htmlOptions.template = project.html.template;
+        //         }`;
+        //     } else {
+        //         htmlOptions.templateContent = (parameters: any) =>
+        //             `<!DOCTYPE html><html><head><title>${String(
+        //                 parameters?.htmlWebpackPlugin?.options?.title ?? ""
+        //             )}</title></head><body></body></html>`;
+        //     }
+        //
+        //     if (typeof project.html === "object" && project.html.templateParameters != null) {
+        //         htmlOptions.templateParameters = project.html.templateParameters;
+        //     }
+        // }
 
         const styleLoader: RuleSetUse = {
             loader: require.resolve("style-loader")
@@ -260,9 +262,10 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             }
         };
 
-        const extractCss =
-            mode !== "development" &&
-            (!project.css || project.css.mode == null || project.css.mode === "load-from-html");
+        // TODO
+        // const extractCss =
+        //     mode !== "development" &&
+        //     (!project.css || project.css.mode == null || project.css.mode === "load-from-html");
 
         const fileLoader = {
             loader: require.resolve("file-loader"),
@@ -312,7 +315,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     {
                         test: /\.css$/i,
                         use: [
-                            extractCss ? MiniCssExtractPlugin.loader : styleLoader,
+                            // TODO
+                            /* extractCss ? MiniCssExtractPlugin.loader : */ styleLoader,
                             cssLoader,
                             ...(mode === "development" ? [] : [postcssLoader])
                         ]
@@ -320,7 +324,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     {
                         test: /\.less$/i,
                         use: [
-                            extractCss ? MiniCssExtractPlugin.loader : styleLoader,
+                            // TODO
+                            /* extractCss ? MiniCssExtractPlugin.loader : */ styleLoader,
                             cssLoader,
                             ...(mode === "development" ? [] : [postcssLoader]),
                             lessLoader
@@ -342,36 +347,40 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                           minimize: false
                       }
                     : {
-                          minimize: true,
-                          minimizer: [
-                              new TerserPlugin({
-                                  cache: true,
-                                  extractComments: /^\**!|@preserve|@license/i,
-                                  parallel: true,
-                                  terserOptions: {
-                                      compress: {
-                                          passes: 2,
-                                          unsafe: true,
-                                          unsafe_math: true,
-                                          unsafe_proto: true
-                                      },
-                                      output: {
-                                          inline_script: false,
-                                          comments: false
-                                      }
-                                  }
-                              })
-                          ]
+                          minimize: true //,
+                          // TODO
+                          // minimizer: [
+                          //     new TerserPlugin({
+                          //         cache: true,
+                          //         extractComments: /^\**!|@preserve|@license/i,
+                          //         parallel: true,
+                          //         terserOptions: {
+                          //             compress: {
+                          //                 passes: 2,
+                          //                 unsafe: true,
+                          //                 unsafe_math: true,
+                          //                 unsafe_proto: true
+                          //             },
+                          //             output: {
+                          //                 inline_script: false,
+                          //                 comments: false
+                          //             }
+                          //         }
+                          //     })
+                          // ]
                       },
             plugins: [
-                ...(mode === "development" ? [] : [new CleanWebpackPlugin()]),
-                new DefinePlugin(dictionaryMap(define, value => JSON.stringify(value))),
-                ...(extractCss ? [new MiniCssExtractPlugin()] : []),
-                ...(project.html === false ? [] : [new HtmlWebpackPlugin(htmlOptions)])
+                // TODO
+                // ...(mode === "development" ? [] : [new CleanWebpackPlugin()]),
+                new DefinePlugin(dictionaryMap(define, value => JSON.stringify(value))) //,
+                // TODO
+                // ...(extractCss ? [new MiniCssExtractPlugin()] : []),
+                // ...(project.html === false ? [] : [new HtmlWebpackPlugin(htmlOptions)])
             ],
-            devServer: {
-                contentBase: false
-            },
+            // TODO
+            // devServer: {
+            //     contentBase: false
+            // },
             output: {
                 path: destDir,
                 devtoolModuleFilenameTemplate: "[resource-path]?[loaders]"
