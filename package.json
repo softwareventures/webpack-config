@@ -26,7 +26,7 @@
     "@types/node": "10.17.44",
     "@types/terser-webpack-plugin": "4.2.0",
     "@types/webpack": "4.41.24",
-    "@types/webpack-dev-server": "3.11.0",
+    "@types/webpack-dev-server": "3.11.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.12.1",
     "prettier": "2.1.2",
