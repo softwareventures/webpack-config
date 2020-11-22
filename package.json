@@ -40,7 +40,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@softwareventures/array": "3.4.0",
+    "@softwareventures/array": "3.5.1",
     "@softwareventures/dictionary": "^0.7.1",
     "@softwareventures/tsconfig": "^2.3.2",
     "clean-webpack-plugin": "^3.0.0",
