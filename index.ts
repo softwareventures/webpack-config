@@ -279,6 +279,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             mode,
             context: rootDir,
             entry,
+            target: "web",
             module: {
                 rules: [
                     {
