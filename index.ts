@@ -270,8 +270,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 esModule: true,
                 name:
                     mode === "development"
-                        ? "[path][name]-[sha256:hash:base64:8].[ext]"
-                        : "[sha256:hash:base64:8].[ext]"
+                        ? "[path][name]-[sha256:contenthash:base64:8].[ext]"
+                        : "[sha256:contenthash:base64:8].[ext]"
             }
         };
 
