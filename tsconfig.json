@@ -1,8 +1,6 @@
 {
   "extends": "@softwareventures/tsconfig",
   "compilerOptions": {
-    "module": "CommonJS",
-    "lib": ["es2015"],
     "types": ["node", "webpack-dev-server"]
   }
 }
