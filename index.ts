@@ -346,7 +346,6 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                           minimize: true,
                           minimizer: [
                               new TerserPlugin({
-                                  cache: true,
                                   extractComments: /^\**!|@preserve|@license/i,
                                   parallel: true,
                                   terserOptions: {
