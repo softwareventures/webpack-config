@@ -305,7 +305,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                             extractCss ? MiniCssExtractPlugin.loader : styleLoader,
                             cssLoader,
                             ...(mode === "development" ? [] : [postcssLoader])
-                        ]
+                        ],
+                        type: "javascript/auto"
                     },
                     {
                         test: /\.less$/i,
@@ -314,7 +315,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                             cssLoader,
                             ...(mode === "development" ? [] : [postcssLoader]),
                             lessLoader
-                        ]
+                        ],
+                        type: "javascript/auto"
                     },
                     {
                         test: /\.(eot|gif|jpe?g|mp[34]|og[agv]|png|svg|ttf|web[mp]|woff2?)$/i,
