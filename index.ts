@@ -308,7 +308,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                                     esModule: true
                                 }
                             }
-                        ]
+                        ],
+                        type: "javascript/auto"
                     },
                     {
                         test: /\.css$/i,
@@ -331,7 +332,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     },
                     {
                         test: /\.(eot|gif|jpe?g|mp[34]|og[agv]|png|svg|ttf|web[mp]|woff2?)$/i,
-                        use: fileLoader
+                        use: fileLoader,
+                        type: "javascript/auto"
                     }
                 ]
             },
