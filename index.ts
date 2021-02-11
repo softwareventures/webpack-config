@@ -268,7 +268,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             mode,
             context: rootDir,
             entry,
-            target: "web",
+            target: ["web", "es2017"],
             module: {
                 rules: [
                     {
