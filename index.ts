@@ -2,13 +2,13 @@ import {dirname, normalize, resolve, sep} from "path";
 import {fold} from "@softwareventures/array";
 import {map as dictionaryMap, merge as dictionaryMerge} from "@softwareventures/dictionary";
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
-import {Object as JsonObject} from "json-typescript";
-import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
-import {Options as HtmlMinifierOptions} from "html-minifier-terser";
 import cssnano = require("cssnano");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
+import {Object as JsonObject} from "json-typescript";
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import TerserPlugin = require("terser-webpack-plugin");
+import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
+import {Options as HtmlMinifierOptions} from "html-minifier-terser";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>;
@@ -264,6 +264,17 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             mode !== "development" &&
             (!project.css || project.css.mode == null || project.css.mode === "load-from-html");
 
+        const fileLoader = {
+            loader: require.resolve("file-loader"),
+            options: {
+                esModule: true,
+                name:
+                    mode === "development"
+                        ? "[path][name]-[sha256:contenthash:base64:8].[ext]"
+                        : "[sha256:contenthash:base64:8].[ext]"
+            }
+        };
+
         const configuration: Configuration = {
             mode,
             context: rootDir,
@@ -288,6 +299,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     {
                         test: /\.html?$/i,
                         use: [
+                            fileLoader,
                             require.resolve("extract-loader"),
                             {
                                 loader: require.resolve("html-loader"),
@@ -296,8 +308,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                                     esModule: true
                                 }
                             }
-                        ],
-                        type: "asset/resource"
+                        ]
                     },
                     {
                         test: /\.css$/i,
@@ -320,7 +331,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     },
                     {
                         test: /\.(eot|gif|jpe?g|mp[34]|og[agv]|png|svg|ttf|web[mp]|woff2?)$/i,
-                        type: "asset/resource"
+                        use: fileLoader
                     }
                 ]
             },
@@ -365,11 +376,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             },
             output: {
                 path: destDir,
-                devtoolModuleFilenameTemplate: "[resource-path]?[loaders]",
-                assetModuleFilename:
-                    mode === "development"
-                        ? "[path][name]-[sha256:contenthash:base64:8].[ext]"
-                        : "[sha256:contenthash:base64:8].[ext]"
+                devtoolModuleFilenameTemplate: "[resource-path]?[loaders]"
             }
         };
 
