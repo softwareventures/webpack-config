@@ -378,6 +378,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             },
             output: {
                 path: destDir,
+                publicPath: "",
                 devtoolModuleFilenameTemplate: "[resource-path]?[loaders]"
             }
         };
