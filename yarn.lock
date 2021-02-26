@@ -341,10 +341,10 @@
   dependencies:
     tslib "2.0.0"
 
-"@softwareventures/tsconfig@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-5.0.0.tgz#29476e5e510ad2dddce1f3d2e532a3cd24be0045"
-  integrity sha512-JHtumblLptWlc6eOQRpZR9FKf0bhomrPtGnztdCSitlOiMeHhwy7Zd64wpE2QNnboM9LJBXGXeHGV8QS8n+mCg==
+"@softwareventures/tsconfig@5.1.0-alpha.1":
+  version "5.1.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-5.1.0-alpha.1.tgz#adfce94f0e1c3b6da148ae11123ec1c3e526bc3f"
+  integrity sha512-XLDsvYPUyINmFhykIDiZ6TCz9/Z+Paoto1LplYiZ3mu3UKzHGTo8Md24xkZzfbkW3pBmGWngY45uK5fVHTpDZQ==
 
 "@tootallnate/once@1":
   version "1.1.2"
