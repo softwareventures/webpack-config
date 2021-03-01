@@ -295,28 +295,20 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@softwareventures/array@3.6.0":
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-3.6.0.tgz#901f3231814ae0129ebaf82a7849abd756145751"
-  integrity sha512-uVViiQxY12FUfz3oEdJqo8UmfllDYG6HFs3o3M4R/zgwcY3Msd4sR4ymxs4Bbf79YoAfUMgApFyIsetGwsmW7Q==
+"@softwareventures/array@3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-3.6.1.tgz#4a51d3ffd99dc4ac2dd1edda506d8a8bfd7ab732"
+  integrity sha512-EYI2a9klBOojOMnc+7ufcnXC4Zst26yYjlYkoGrtiA5xCIQs8PJDO39zUmw+tUJa0P1n+62zO9x1b+N/PoLesw==
   dependencies:
-    "@softwareventures/dictionary" "^0.6.0 || ^0.7.0"
+    "@softwareventures/dictionary" "^0.6.0 || ^0.7.0 || ^0.8.0"
     "@softwareventures/ordered" "^0.2.0"
     dictionary-types "^1.2.0"
     tslib "^1.9.3 || ^2.0.0"
 
-"@softwareventures/dictionary@^0.6.0 || ^0.7.0":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.7.1.tgz#e42e6de9a3e73781de13130d0c0668e945f79e48"
-  integrity sha512-RaAhQLzV6s2ZGod81BLDV9wxhXOpLrnhC8MaYJ4yZCA8YOzE1ty+sKr5m+wkcAFwZyLJaNyUF84SK/6ltlSKQQ==
-  dependencies:
-    dictionary-types "^1.2.0"
-    tslib "2.0.0"
-
-"@softwareventures/dictionary@^0.7.1 || ^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.8.0.tgz#026963b3888fbf052ae9a610b35671eb0647caef"
-  integrity sha512-VuO1OySIxP2vWEL3a4jbUnd9mbQ//nvwaGDQo3S2ZrXrxJ2hzodiqAFhc7XwW/ngGsoV/VToM4JdlpsMoirD9A==
+"@softwareventures/dictionary@^0.6.0 || ^0.7.0 || ^0.8.0", "@softwareventures/dictionary@^0.7.1 || ^0.8.0":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.8.1.tgz#6a0fdd39c8181471337561c6724272de72872ad7"
+  integrity sha512-rlGBreUXqD/2ybJZHLUQs08J1C3mQXpvVmpTejmsmy/istVJ1YsOMK52ahirMr2/a7S3NUoF2BQImWQ3AYIhlQ==
   dependencies:
     dictionary-types "^1.2.0"
     tslib "2.1.0"
