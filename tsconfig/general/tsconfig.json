@@ -3,7 +3,6 @@
   "compilerOptions": {
     "lib": ["ES2017", "DOM", "DOM.Iterable"],
     "noEmit": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true // Temporarily required for clean-webpack-plugin
+    "resolveJsonModule": true
   }
 }
