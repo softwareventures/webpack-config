@@ -69,11 +69,11 @@ declare module "*.webp" {
 }
 
 declare module "*.html" {
-    const text: string;
-    export default text;
+    const url: string;
+    export = url;
 }
 
 declare module "*.htm" {
-    const text: string;
-    export default text;
+    const url: string;
+    export = url;
 }

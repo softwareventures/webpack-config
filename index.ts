@@ -299,17 +299,16 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     {
                         test: /\.html?$/i,
                         use: [
-                            fileLoader,
                             require.resolve("extract-loader"),
                             {
                                 loader: require.resolve("html-loader"),
                                 options: {
                                     minimize: htmlMinifierOptions,
-                                    esModule: true
+                                    esModule: false
                                 }
                             }
                         ],
-                        type: "javascript/auto"
+                        type: "asset/resource"
                     },
                     {
                         test: /\.css$/i,
@@ -379,7 +378,13 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             output: {
                 path: destDir,
                 publicPath: "",
-                devtoolModuleFilenameTemplate: "[resource-path]?[loaders]"
+                devtoolModuleFilenameTemplate: "[resource-path]?[loaders]",
+                assetModuleFilename: mode === "development"
+                    ? "[path][name]-[contenthash].[ext]"
+                    : "[contenthash].[ext]",
+                hashDigest: "base64url",
+                hashDigestLength: 8,
+                hashFunction: "sha256"
             }
         };
 
