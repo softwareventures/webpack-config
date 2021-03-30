@@ -267,7 +267,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         const fileLoader = {
             loader: require.resolve("file-loader"),
             options: {
-                esModule: true,
+                esModule: false,
                 name:
                     mode === "development"
                         ? "[path][name]-[sha256:contenthash:base64:8].[ext]"
@@ -379,9 +379,10 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 path: destDir,
                 publicPath: "",
                 devtoolModuleFilenameTemplate: "[resource-path]?[loaders]",
-                assetModuleFilename: mode === "development"
-                    ? "[path][name]-[contenthash].[ext]"
-                    : "[contenthash].[ext]",
+                assetModuleFilename:
+                    mode === "development"
+                        ? "[path][name]-[contenthash].[ext]"
+                        : "[contenthash].[ext]",
                 hashDigest: "base64url",
                 hashDigestLength: 8,
                 hashFunction: "sha256"
