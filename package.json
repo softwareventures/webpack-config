@@ -59,7 +59,8 @@
     "postcss": "^8.2.5",
     "postcss-loader": "^5.0.0",
     "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^5.1.1"
+    "terser-webpack-plugin": "^5.1.1",
+    "tslib": "^2.1.0"
   },
   "bundledDependencies": [
     "clean-webpack-plugin",
