@@ -299,16 +299,17 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     {
                         test: /\.html?$/i,
                         use: [
+                            fileLoader,
                             require.resolve("extract-loader"),
                             {
                                 loader: require.resolve("html-loader"),
                                 options: {
                                     minimize: htmlMinifierOptions,
-                                    esModule: false
+                                    esModule: true
                                 }
                             }
                         ],
-                        type: "asset/resource"
+                        type: "javascript/auto"
                     },
                     {
                         test: /\.css$/i,
