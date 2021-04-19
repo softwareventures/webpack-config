@@ -42,7 +42,7 @@
   "dependencies": {
     "@softwareventures/array": "3.9.0",
     "@softwareventures/dictionary": "^0.7.1 || ^0.8.0",
-    "@softwareventures/tsconfig": "^5.0.0",
+    "@softwareventures/tsconfig": "^6.0.0-alpha.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.2",
     "cssnano": "^4.1.10",
