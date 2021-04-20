@@ -1,7 +1,6 @@
 {
-  "extends": "@softwareventures/tsconfig",
+  "extends": "@softwareventures/tsconfig/dom",
   "compilerOptions": {
-    "lib": ["ES2017", "DOM", "DOM.Iterable"],
     "noEmit": true
   }
 }

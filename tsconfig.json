@@ -1,5 +1,5 @@
 {
-  "extends": "@softwareventures/tsconfig",
+  "extends": "@softwareventures/tsconfig/commonjs",
   "compilerOptions": {
     "types": ["node", "webpack-dev-server"],
     "skipLibCheck": true // Temporarily required for clean-webpack-plugin
