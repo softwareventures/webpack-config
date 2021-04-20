@@ -2,7 +2,6 @@
   "extends": "@softwareventures/tsconfig",
   "compilerOptions": {
     "lib": ["ES2017", "DOM", "DOM.Iterable"],
-    "noEmit": true,
-    "resolveJsonModule": true
+    "noEmit": true
   }
 }
