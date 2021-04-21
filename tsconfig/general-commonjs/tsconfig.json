@@ -1,0 +1,6 @@
+{
+  "extends": "@softwareventures/tsconfig/dom-commonjs",
+  "compilerOptions": {
+    "noEmit": true
+  }
+}
