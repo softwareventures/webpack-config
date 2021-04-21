@@ -1,5 +1,5 @@
 {
-  "extends": "../general",
+  "extends": "../general/tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
     "jsxFactory": "h",
