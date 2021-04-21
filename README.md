@@ -115,7 +115,7 @@ as follows:
 ```json
 {
     "scripts": {
-        "build": "webpack --env.production"
+        "build": "webpack --env production"
     }
 }
 ```
@@ -140,7 +140,7 @@ as follows:
 ```json
 {
     "scripts": {
-        "start": "webpack-dev-server"
+        "start": "webpack serve --open"
     }
 }
 ```
