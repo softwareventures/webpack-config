@@ -23,7 +23,7 @@ $ npm install --save-dev @softwareventures/webpack-config webpack webpack-cli we
 $ yarn add --dev @softwareventures/webpack-config webpack webpack-cli webpack-dev-server
 ```
 
-Create a `webpack.config.js` file at the root of your project with the following
+Create a `webpack.config.cjs` file at the root of your project with the following
 contents:
 
 ```javascript
@@ -38,7 +38,7 @@ webpack-config exports a single function, `config`. Options may be passed to
 `config` as an object or as a function that returns an object.
 
 The `config` function itself returns a webpack configuration, which should be
-exported by `webpack.config.js`.
+exported by `webpack.config.cjs`.
 
 We also recommend that you add a `build` and `start` script to `package.json`:
 
