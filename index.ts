@@ -9,6 +9,7 @@ import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import TerserPlugin = require("terser-webpack-plugin");
 import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
 import {Options as HtmlMinifierOptions} from "html-minifier-terser";
+import ResolveTypescriptPlugin from "resolve-typescript-plugin";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>;
@@ -338,7 +339,8 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 ]
             },
             resolve: {
-                extensions: [".js", ".tsx", ".ts"]
+                fullySpecified: true,
+                plugins: [new ResolveTypescriptPlugin()]
             },
             devtool: mode === "development" ? "inline-source-map" : false,
             optimization:
