@@ -23,8 +23,8 @@ $ npm install --save-dev @softwareventures/webpack-config webpack webpack-cli we
 $ yarn add --dev @softwareventures/webpack-config webpack webpack-cli webpack-dev-server
 ```
 
-Create a `webpack.config.cjs` file at the root of your project with the following
-contents:
+Create a `webpack.config.cjs` file at the root of your project with the
+following contents:
 
 ```javascript
 const config = require("@softwareventures/webpack-config");
