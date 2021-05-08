@@ -156,7 +156,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         const configDir = module.parent == null ? null : dirname(module.parent.filename);
 
         const rootDir =
-            configDir == null ? project.rootDir : resolve(configDir, project.rootDir || ".");
+            configDir == null ? project.rootDir : resolve(configDir, project.rootDir ?? ".");
 
         if (rootDir == null || !isAbsolute(rootDir)) {
             throw new Error("Could not determine project root path");
@@ -165,13 +165,13 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
         const destDir =
             project.destDir == null ? resolve(rootDir, "dist") : resolve(rootDir, project.destDir);
 
-        const vendor = project.vendor == null ? "sv" : project.vendor;
+        const vendor = project.vendor ?? "sv";
 
         const vendorCssId = vendor.replace(/[[\]]/g, "_");
 
         const entry: WebpackConfig.Entry = project.entry ?? "./index.js";
 
-        const define: JsonObject = project.define == null ? {} : project.define;
+        const define: JsonObject = project.define ?? {};
 
         const htmlMinifierOptions: HtmlMinifierOptions = {
             collapseBooleanAttributes: true,
