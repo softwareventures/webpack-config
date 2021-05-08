@@ -169,7 +169,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
 
         const vendorCssId = vendor.replace(/[[\]]/g, "_");
 
-        const entry: WebpackConfig.Entry = project.entry == null ? "./index" : project.entry;
+        const entry: WebpackConfig.Entry = project.entry ?? "./index.js";
 
         const define: JsonObject = project.define == null ? {} : project.define;
 
