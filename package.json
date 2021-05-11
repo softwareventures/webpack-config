@@ -43,7 +43,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@softwareventures/array": "3.10.0",
+    "@softwareventures/array": "4.1.0",
     "@softwareventures/dictionary": "^0.7.1 || ^0.8.0",
     "@softwareventures/tsconfig": "^6.0.0-alpha.2",
     "clean-webpack-plugin": "^3.0.0",
