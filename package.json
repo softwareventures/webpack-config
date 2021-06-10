@@ -57,7 +57,7 @@
     "less-loader": "^7.0.0",
     "mini-css-extract-plugin": "^1.0.0",
     "postcss": "^8.0.0",
-    "postcss-loader": "^4.0.0",
+    "postcss-loader": "^4.0.0 || ^6.0.0",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^4.0.0",
     "tslib": "^2.1.0"
