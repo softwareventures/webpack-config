@@ -8,7 +8,7 @@
   "repository": "github:softwareventures/webpack-config",
   "license": "ISC",
   "scripts": {
-    "fix": "eslint . --fix && prettier --write .",
+    "fix": "tsc --noEmit && eslint . --fix && prettier --write .",
     "lint": "tsc --noEmit && eslint . && prettier --check .",
     "prepare": "tsc",
     "semantic-release": "semantic-release",
