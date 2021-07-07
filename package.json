@@ -14,10 +14,10 @@
     "semantic-release": "semantic-release",
     "test": "echo No tests yet"
   },
+  "sideEffects": false,
   "engines": {
     "node": ">= 12"
   },
-  "sideEffects": false,
   "dependencies": {
     "@softwareventures/array": "4.1.1",
     "@softwareventures/dictionary": "^0.7.1 || ^0.8.0",
