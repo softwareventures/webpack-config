@@ -442,13 +442,13 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@softwareventures/array@4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-4.1.1.tgz#7a617dadd8ec5f14c46f882d09a1a5c62e63ca09"
-  integrity sha512-sd5vDRKr6HRm8+u2eqP6037IDEh7iiwEvP4/OOd7iT0UaZz3KlEw8NQCWwVCrjue8LpigF+CbahEozP3coXRzA==
+"@softwareventures/array@4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-4.1.2.tgz#64837b0f2b9471e831ddd3545dc7a132ab5fbc1b"
+  integrity sha512-pJbMwIXY4Cod9DGYkcSlTnsSHMOWVT9Uu4+FvlPb4gFe3Qco+hekal4IR58KRwg1EqSHejvAIdP/bTSDnOvl0w==
   dependencies:
     "@softwareventures/nullable" "^1.0.0 || ^1.0.0 || ^1.2.1"
-    "@softwareventures/ordered" "^0.2.0"
+    "@softwareventures/ordered" "^0.2.0 || ^1.0.0"
     tslib "^2.0.0"
 
 "@softwareventures/dictionary@^0.7.1 || ^0.8.0":
@@ -481,12 +481,12 @@
   dependencies:
     tslib "2.2.0"
 
-"@softwareventures/ordered@^0.2.0":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-0.2.2.tgz#e8b55c57a7219a90e0cc6a27a793c4598e5ae9aa"
-  integrity sha512-n3Kkk9jZ+i2Az7YqnJR3TimhsVSiTfwN9ybDfPcJvvCge0cINszO754n4/pdlCyLYVOn2VzTVFDVTrj+xFvNFQ==
+"@softwareventures/ordered@^0.2.0 || ^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-1.0.0.tgz#d803eef43bb0b4ccfcd78d2928fe38b5109ad99e"
+  integrity sha512-SUFUYDWEPAS54LpGH+mRHwkGuTINPDt4OOS3h/Zr9f12JPFz2cqh6Xxwg75BZqwaeONuUwmklJVMRmgvxSSkPA==
   dependencies:
-    tslib "^1.9.3 || ^2.0.0"
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
 "@softwareventures/prettier-config@1.0.2":
   version "1.0.2"
@@ -7182,7 +7182,7 @@ tslib@2.2.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
 
-tslib@2.3.0, "tslib@^1.11.2 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0", tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0:
+tslib@2.3.0, "tslib@^1.11.2 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0 || ^2.1.0", tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
