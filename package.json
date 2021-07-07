@@ -3,45 +3,21 @@
   "version": "0.0.0-development",
   "description": "Standard webpack configuration for Software Ventures Limited",
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
-  "license": "ISC",
-  "bugs": "https://github.com/softwareventures/webpack-config/issues",
   "homepage": "https://github.com/softwareventures/webpack-config",
+  "bugs": "https://github.com/softwareventures/webpack-config/issues",
   "repository": "github:softwareventures/webpack-config",
+  "license": "ISC",
   "scripts": {
-    "fix": "eslint . --fix && prettier --write .",
-    "lint": "eslint . && prettier --check .",
+    "fix": "tsc --noEmit && eslint . --fix && prettier --write .",
+    "lint": "tsc --noEmit && eslint . && prettier --check .",
     "prepare": "tsc",
-    "test": "echo No tests yet",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "test": "echo No tests yet"
   },
   "engines": {
     "node": ">= 12"
   },
   "sideEffects": false,
-  "devDependencies": {
-    "@softwareventures/eslint-config": "3.6.2",
-    "@softwareventures/prettier-config": "1.0.2",
-    "@softwareventures/semantic-release-config": "1.1.1",
-    "@types/cssnano": "4.0.1",
-    "@types/html-minifier-terser": "5.1.2",
-    "@types/html-webpack-plugin": "3.2.6",
-    "@types/mini-css-extract-plugin": "1.4.3",
-    "@types/node": "12.20.15",
-    "@types/terser-webpack-plugin": "5.0.4",
-    "@types/webpack-dev-server": "3.11.5",
-    "cz-conventional-changelog": "3.3.0",
-    "eslint": "7.30.0",
-    "prettier": "2.3.2",
-    "semantic-release": "17.4.4",
-    "typescript": "4.3.5",
-    "webpack": "5.43.0"
-  },
-  "peerDependencies": {
-    "ts-loader": "^8.0.0 || ^9.0.0",
-    "typescript": "^4.2.0",
-    "webpack": "^5.21.2",
-    "webpack-dev-server": "^3.11.0"
-  },
   "dependencies": {
     "@softwareventures/array": "4.1.1",
     "@softwareventures/dictionary": "^0.7.1 || ^0.8.0",
@@ -85,6 +61,30 @@
     "style-loader",
     "terser-webpack-plugin"
   ],
+  "peerDependencies": {
+    "ts-loader": "^8.0.0 || ^9.0.0",
+    "typescript": "^4.2.0",
+    "webpack": "^5.21.2",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "@softwareventures/eslint-config": "3.6.2",
+    "@softwareventures/prettier-config": "1.0.2",
+    "@softwareventures/semantic-release-config": "1.1.1",
+    "@types/cssnano": "4.0.1",
+    "@types/html-minifier-terser": "5.1.2",
+    "@types/html-webpack-plugin": "3.2.6",
+    "@types/mini-css-extract-plugin": "1.4.3",
+    "@types/node": "12.20.15",
+    "@types/terser-webpack-plugin": "5.0.4",
+    "@types/webpack-dev-server": "3.11.5",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "7.30.0",
+    "prettier": "2.3.2",
+    "semantic-release": "17.4.4",
+    "typescript": "4.3.5",
+    "webpack": "5.43.0"
+  },
   "eslintConfig": {
     "root": true,
     "extends": "@softwareventures",
@@ -98,8 +98,8 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "snyk": true,
   "release": {
     "extends": "@softwareventures/semantic-release-config"
-  }
+  },
+  "snyk": true
 }
