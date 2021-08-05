@@ -229,7 +229,6 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                 importLoaders: mode === "development" ? 1 : 0,
                 esModule: true,
                 modules: {
-                    compileType: "module",
                     mode: "local",
                     localIdentName:
                         mode === "development"
