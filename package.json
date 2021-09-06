@@ -77,7 +77,7 @@
     "@types/mini-css-extract-plugin": "2.2.0",
     "@types/node": "12.20.23",
     "@types/terser-webpack-plugin": "5.0.4",
-    "@types/webpack-dev-server": "3.11.6",
+    "@types/webpack-dev-server": "4.1.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.32.0",
     "prettier": "2.3.2",
