@@ -1,15 +1,22 @@
 import {dirname, normalize, resolve, sep} from "path";
 import {fold} from "@softwareventures/array";
-import {map as dictionaryMap, merge as dictionaryMerge} from "@softwareventures/dictionary";
+import {
+    dictionary,
+    map as dictionaryMap,
+    merge as dictionaryMerge
+} from "@softwareventures/dictionary";
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import cssnano = require("cssnano");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
-import {Object as JsonObject} from "json-typescript";
+import type {Object as JsonObject} from "json-typescript";
 import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import TerserPlugin = require("terser-webpack-plugin");
-import {Configuration, DefinePlugin, RuleSetUse} from "webpack";
-import {Options as HtmlMinifierOptions} from "html-minifier-terser";
+import type {Configuration, RuleSetUse} from "webpack";
+import {DefinePlugin} from "webpack";
+import type {Options as HtmlMinifierOptions} from "html-minifier-terser";
 import ResolveTypescriptPlugin from "resolve-typescript-plugin";
+import {hasProperty} from "unknown";
+import {notNull} from "@softwareventures/nullable";
 
 // Placeholder variables for type declarations.
 let webpackConfiguration: Required<Configuration>;
@@ -144,9 +151,14 @@ namespace WebpackConfig {
         | ((mode: "production" | "development", env: JsonObject) => Project);
 }
 
-function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) => Configuration {
+function webpackConfig(
+    projectSource: WebpackConfig.ProjectSource
+): (env: unknown) => Configuration {
     return env => {
-        const mode = env != null && env.production ? "production" : "development";
+        const mode =
+            hasProperty(env, "production") && Boolean(env.production)
+                ? "production"
+                : "development";
 
         const project =
             typeof projectSource === "function"
@@ -167,7 +179,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
 
         const vendor = project.vendor ?? "sv";
 
-        const vendorCssId = vendor.replace(/[[\]]/g, "_");
+        const vendorCssId = vendor.replace(/[[\]]/gu, "_");
 
         const entry: WebpackConfig.Entry = project.entry ?? "./index.js";
 
@@ -208,9 +220,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                     project.html.template
                 }`;
             } else {
-                htmlOptions.templateContent = (parameters: any) =>
+                htmlOptions.templateContent = (parameters: unknown) =>
                     `<!DOCTYPE html><html><head><title>${String(
-                        parameters?.htmlWebpackPlugin?.options?.title ?? ""
+                        get(parameters, "htmlWebpackPlugin", "options", "title") ?? ""
                     )}</title></head><body></body></html>`;
             }
 
@@ -262,7 +274,9 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
 
         const extractCss =
             mode !== "development" &&
-            (!project.css || project.css.mode == null || project.css.mode === "load-from-html");
+            (project.css == null ||
+                project.css.mode == null ||
+                project.css.mode === "load-from-html");
 
         const fileLoader = {
             loader: require.resolve("file-loader"),
@@ -283,7 +297,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
             module: {
                 rules: [
                     {
-                        test: /\.tsx?$/i,
+                        test: /\.tsx?$/iu,
                         use: {
                             loader: "ts-loader",
                             options: {
@@ -294,10 +308,10 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                                 transpileOnly: mode === "development"
                             }
                         },
-                        exclude: /\/node_modules\//
+                        exclude: /\/node_modules\//u
                     },
                     {
-                        test: /\.html?$/i,
+                        test: /\.html?$/iu,
                         use: [
                             fileLoader,
                             require.resolve("extract-loader"),
@@ -312,7 +326,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         type: "javascript/auto"
                     },
                     {
-                        test: /\.css$/i,
+                        test: /\.css$/iu,
                         use: [
                             extractCss ? MiniCssExtractPlugin.loader : styleLoader,
                             cssLoader,
@@ -321,7 +335,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         type: "javascript/auto"
                     },
                     {
-                        test: /\.less$/i,
+                        test: /\.less$/iu,
                         use: [
                             extractCss ? MiniCssExtractPlugin.loader : styleLoader,
                             cssLoader,
@@ -331,7 +345,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                         type: "javascript/auto"
                     },
                     {
-                        test: /\.(eot|gif|jpe?g|mp[34]|og[agv]|png|svg|ttf|web[mp]|woff2?)$/i,
+                        test: /\.(eot|gif|jpe?g|mp[34]|og[agv]|png|svg|ttf|web[mp]|woff2?)$/iu,
                         use: fileLoader,
                         type: "javascript/auto"
                     }
@@ -351,7 +365,7 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
                           minimize: true,
                           minimizer: [
                               new TerserPlugin({
-                                  extractComments: /^\**!|@preserve|@license/i,
+                                  extractComments: /^\**!|@preserve|@license/iu,
                                   parallel: true,
                                   terserOptions: {
                                       compress: {
@@ -399,22 +413,31 @@ function WebpackConfig(projectSource: WebpackConfig.ProjectSource): (env: any) =
     };
 }
 
-export = WebpackConfig;
+export = webpackConfig;
 
 function isAbsolute(dir: string): boolean {
     return normalize(dir + sep) === normalize(resolve(dir) + sep);
 }
 
-function normalizeEnv(env: any): JsonObject {
+function normalizeEnv(env: unknown): JsonObject {
     if (env instanceof Array) {
         return fold(
             env,
             (accumulator, element) => dictionaryMerge(accumulator, normalizeEnv(element)),
-            Object.create(null)
+            dictionary()
         );
-    } else if (typeof env === "object") {
-        return env;
+    } else if (typeof env === "object" && env != null) {
+        return env as JsonObject;
     } else {
         return {};
     }
+}
+
+function get(object: unknown, ...keys: string[]): unknown {
+    let value = object;
+    for (let i = 0; value != null && i < keys.length; ++i) {
+        const key = notNull(keys[i]);
+        value = hasProperty(value, key) ? value[key] : undefined;
+    }
+    return value;
 }
