@@ -76,7 +76,7 @@
     "@types/webpack-dev-server": "3.11.6",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.32.0",
-    "prettier": "2.3.2",
+    "prettier": "2.4.0",
     "semantic-release": "17.4.7",
     "typescript": "4.4.2"
   },
