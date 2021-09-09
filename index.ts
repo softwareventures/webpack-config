@@ -389,7 +389,7 @@ function webpackConfig(
                 ...(project.html === false ? [] : [new HtmlWebpackPlugin(htmlOptions)])
             ],
             devServer: {
-                contentBase: false
+                static: false
             },
             output: {
                 path: destDir,
