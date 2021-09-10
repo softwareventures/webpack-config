@@ -151,7 +151,8 @@ namespace WebpackConfig {
         | ((mode: "production" | "development", env: JsonObject) => Project);
 }
 
-function webpackConfig(
+// eslint-disable-next-line @typescript-eslint/naming-convention
+function WebpackConfig(
     projectSource: WebpackConfig.ProjectSource
 ): (env: unknown) => Configuration {
     return env => {
@@ -413,7 +414,7 @@ function webpackConfig(
     };
 }
 
-export = webpackConfig;
+export = WebpackConfig;
 
 function isAbsolute(dir: string): boolean {
     return normalize(dir + sep) === normalize(resolve(dir) + sep);
