@@ -353,7 +353,6 @@ function WebpackConfig(
                 ]
             },
             resolve: {
-                fullySpecified: true,
                 plugins: [new ResolveTypescriptPlugin()]
             },
             devtool: mode === "development" ? "inline-source-map" : false,
