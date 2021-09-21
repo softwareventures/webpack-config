@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@softwareventures/eslint-config": "3.6.3",
-    "@softwareventures/prettier-config": "1.0.2",
+    "@softwareventures/prettier-config": "1.0.3",
     "@softwareventures/semantic-release-config": "1.2.0",
     "@types/cssnano": "4.0.1",
     "@types/html-minifier-terser": "5.1.2",
