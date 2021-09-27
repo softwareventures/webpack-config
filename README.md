@@ -97,10 +97,10 @@ purposes, which can be used in place of the above:
     recommended for new projects.
 -   `@softwareventures/webpack-config/tconfig/preact`: Configuration suitable
     for projects using JSX with [Preact][1].
--   `@softwareventures/webpack-config/tconfig/preact`: Same as `preact`, but
-    modules are compiled to CommonJS module format instead of ESM. Useful for
-    older projects that are not ready to transition to ESM. Not recommended for
-    new projects.
+-   `@softwareventures/webpack-config/tconfig/preact-commonjs`: Same as
+    `preact`, but modules are compiled to CommonJS module format instead of ESM.
+    Useful for older projects that are not ready to transition to ESM. Not
+    recommended for new projects.
 -   `@softwareventures/webpack-config/tsconfig/react`: Configuration suitable
     for projects using JSX with [React][3].
 -   `@softwareventures/webpack-config/tsconfig/react-commonjs` Same as `react`,
