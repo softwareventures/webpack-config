@@ -33,7 +33,7 @@ namespace WebpackConfig {
         /** The root directory of the project.
          *
          * The path will be resolved relative to the directory containing
-         * the file that called `config()` (usually `webpack.config.js`).
+         * the file that called `config()` (usually `webpack.config.cjs`).
          *
          * @default "." */
         readonly rootDir?: string;
