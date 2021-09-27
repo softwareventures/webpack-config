@@ -101,6 +101,12 @@ purposes, which can be used in place of the above:
     modules are compiled to CommonJS module format instead of ESM. Useful for
     older projects that are not ready to transition to ESM. Not recommended for
     new projects.
+-   `@softwareventures/webpack-config/tsconfig/react`: Configuration suitable
+    for projects using JSX with [React][3].
+-   `@softwareventures/webpack-config/tsconfig/react-commonjs` Same as `react`,
+    but modules are compiled to CommonJS module format instead of ESM. Useful
+    for older projects that are not ready to transition to ESM. Not recommended
+    for new projects.
 
 Any of these presets can be used as a base with project-specific overrides. Any
 options set in `tsconfig.json` will override those set by the preset. See
@@ -161,3 +167,4 @@ yarn start
 
 [1]: https://preactjs.com/
 [2]: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+[3]: https://reactjs.org/
