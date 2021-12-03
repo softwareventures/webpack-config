@@ -502,10 +502,10 @@
     dictionary-types "^1.2.0 || ^2.0.0"
     tslib "2.3.0"
 
-"@softwareventures/eslint-config@5.0.0-alpha.9":
-  version "5.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-5.0.0-alpha.9.tgz#520723bfe90e1bc37b8131274e3227178abf3954"
-  integrity sha512-ghpPpzjIZ/oyBojbEtA65F5TopAytaOaoDrNmkenlsFYpRKdRwS8k439RzJxcpHS5azRezTX++tDI72qbAiIuA==
+"@softwareventures/eslint-config@5.0.0-alpha.10":
+  version "5.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-5.0.0-alpha.10.tgz#1e6e3b3568b87fdde731aa5b553841691a58538f"
+  integrity sha512-DLXF139y2eifDSK5yfy6At/GT+s+/afHeAwQo4qjFm5+gCeKR2uuZJZzkHB3KXwYzmOnyisi9zwC9Y0RPkrjjA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.3.0"
     "@typescript-eslint/parser" "^5.3.0"
@@ -513,7 +513,7 @@
     eslint-plugin-import "^2.25.2"
     eslint-plugin-jsdoc "^37.0.3"
     eslint-plugin-prefer-arrow "^1.2.3"
-    eslint-plugin-sonarjs "^0.10.0"
+    eslint-plugin-sonarjs "^0.10.0 || ^0.11.0"
     tslib "^2.3.1"
 
 "@softwareventures/nullable@^1.0.0 || ^1.0.0 || ^1.2.1 || ^2.0.0", "@softwareventures/nullable@^2.0.0":
@@ -3026,10 +3026,10 @@ eslint-plugin-prefer-arrow@^1.2.3:
   resolved "https://registry.yarnpkg.com/eslint-plugin-prefer-arrow/-/eslint-plugin-prefer-arrow-1.2.3.tgz#e7fbb3fa4cd84ff1015b9c51ad86550e55041041"
   integrity sha512-J9I5PKCOJretVuiZRGvPQxCbllxGAV/viI20JO3LYblAodofBxyMnZAJ+WGeClHgANnSJberTNoFWWjrWKBuXQ==
 
-eslint-plugin-sonarjs@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-sonarjs/-/eslint-plugin-sonarjs-0.10.0.tgz#2b520c6d0dbdecbea98cd82f5cb84fc5c3d2b954"
-  integrity sha512-FBRIBmWQh2UAfuLSnuYEfmle33jIup9hfkR0X8pkfjeCKNpHUG8qyZI63ahs3aw8CJrv47QJ9ccdK3ZxKH016A==
+"eslint-plugin-sonarjs@^0.10.0 || ^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sonarjs/-/eslint-plugin-sonarjs-0.11.0.tgz#46d18bc4066c66e490de057253b9cc97bde9f176"
+  integrity sha512-ei/WuZiL0wP+qx2KrxKyZs3+eDbxiGAhFSm3GKCOOAUkg+G2ny6TSXDB2j67tvyqHefi+eoQsAgGQvz+nEtIBw==
 
 eslint-scope@5.1.1, eslint-scope@^5.1.1:
   version "5.1.1"
