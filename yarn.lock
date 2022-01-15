@@ -480,10 +480,10 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@softwareventures/array@4.4.0":
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-4.4.0.tgz#03cb07c30dbe3ff8ef6f85046428d3f183137a56"
-  integrity sha512-mfECaKfSrAVGQcerO6WUzHzK6gUR+3WPLB7HEjrqsc9pjVx/u+CKi4UOe3R+OY/RR5PmjfWyuVvVTF198i/eRQ==
+"@softwareventures/array@4.4.1":
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-4.4.1.tgz#dd2186556e452f58ef940c0e0be52fee6bbccab3"
+  integrity sha512-bAFhUzBDrkhuI5JNRP2HiHTaaZY0Mo7GfEyEtM0rOWJVv86v+jKSPJ7DvsJOgY0Qj3MkFvZfRechbTRYZMr7ng==
   dependencies:
     "@softwareventures/nullable" "^1.0.0 || ^1.0.0 || ^1.2.1 || ^2.0.0"
     "@softwareventures/ordered" "^0.2.0 || ^1.0.0"
@@ -4011,14 +4011,7 @@ hosted-git-info@^2.1.4:
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
   integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
-hosted-git-info@^4.0.0, hosted-git-info@^4.0.1:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-4.0.2.tgz#5e425507eede4fea846b7262f0838456c4209961"
-  integrity sha512-c9OGXbZ3guC/xOlCg1Ci/VgWlwsqDv1yMQL1CWqXDL0hDjXuNcq0zuR4xqPSuasI3kqFDhqSyTjREz5gzq0fXg==
-  dependencies:
-    lru-cache "^6.0.0"
-
-hosted-git-info@^4.0.2:
+hosted-git-info@^4.0.0, hosted-git-info@^4.0.1, hosted-git-info@^4.0.2:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-4.1.0.tgz#827b82867e9ff1c8d0c4d9d53880397d2c86d224"
   integrity sha512-kyCuEOWjJqZuDbRHzL8V93NzQhwIB71oFWSyzVo+KPZI+pnQPPxucdkrOZvkLRnrf5URsQM+IJ09Dw29cRALIA==
