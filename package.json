@@ -30,7 +30,7 @@
     "html-webpack-plugin": "^4.0.0",
     "json-typescript": "1.1.2",
     "less": "^3.9.0",
-    "less-loader": "^7.0.0",
+    "less-loader": "^7.0.0 || ^10.0.0",
     "mini-css-extract-plugin": "^1.0.0",
     "postcss": "^8.0.0",
     "postcss-loader": "^4.0.0",
