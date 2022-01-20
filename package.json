@@ -35,7 +35,7 @@
     "postcss": "^8.0.0",
     "postcss-loader": "^4.0.0",
     "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^4.0.0",
+    "terser-webpack-plugin": "^4.0.0 || ^5.0.0",
     "tslib": "^2.1.0"
   },
   "bundledDependencies": [
@@ -71,7 +71,7 @@
     "@types/html-webpack-plugin": "3.2.6",
     "@types/mini-css-extract-plugin": "1.4.0",
     "@types/node": "10.17.60",
-    "@types/terser-webpack-plugin": "4.2.2",
+    "@types/terser-webpack-plugin": "5.0.4",
     "@types/webpack": "4.41.32",
     "@types/webpack-dev-server": "3.11.6",
     "cz-conventional-changelog": "3.3.0",
