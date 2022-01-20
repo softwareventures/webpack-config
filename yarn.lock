@@ -440,13 +440,21 @@
     dictionary-types "^1.2.0"
     tslib "^1.9.3 || ^2.0.0"
 
-"@softwareventures/dictionary@^0.6.0 || ^0.7.0 || ^0.8.0", "@softwareventures/dictionary@^0.7.1 || ^0.8.0":
+"@softwareventures/dictionary@^0.6.0 || ^0.7.0 || ^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.8.1.tgz#6a0fdd39c8181471337561c6724272de72872ad7"
   integrity sha512-rlGBreUXqD/2ybJZHLUQs08J1C3mQXpvVmpTejmsmy/istVJ1YsOMK52ahirMr2/a7S3NUoF2BQImWQ3AYIhlQ==
   dependencies:
     dictionary-types "^1.2.0"
     tslib "2.1.0"
+
+"@softwareventures/dictionary@^0.7.1 || ^0.8.0 || ^1.0.0":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-1.0.1.tgz#e814796650820addae62fa4ced76a0900cb46b85"
+  integrity sha512-DjQgflEuaDHsw8Jj67n9/XzkBLAmOITxEbWHQoOkv67P8w8KHLCASz3dZuBdcQCiUcwrJyWTIoTS+Zhj/lDjhg==
+  dependencies:
+    dictionary-types "^1.2.0 || ^2.0.0"
+    tslib "2.3.0"
 
 "@softwareventures/eslint-config@3.6.3":
   version "3.6.3"
@@ -2667,6 +2675,11 @@ dictionary-types@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-1.2.0.tgz#187d89b63b044a65a5e4aed0f2345271f086200d"
   integrity sha512-zeP98fC8l+xwHMCw+q9spJCnDrm4ou3Vyk9yNihjJeJD9Mi+zuFxtyO6kAmX5b5d49mavZ6VYvVFF3Ap6hCzBw==
+
+"dictionary-types@^1.2.0 || ^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-2.0.1.tgz#9f0b9b4bcde6237e241bcd7ea1d255be450f6e22"
+  integrity sha512-oGwLOZSgaS8JDIbe42MCTZ+/IUFLaSxfZ1agSwCojz+9K2MxnnAY/YPoKTGHawxnLKCHHN2bQDrP271Glpf7jA==
 
 diff@^4.0.1:
   version "4.0.2"
