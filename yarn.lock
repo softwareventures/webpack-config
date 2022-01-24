@@ -498,13 +498,13 @@
     dictionary-types "^1.2.0 || ^2.0.0"
     tslib "2.3.0"
 
-"@softwareventures/eslint-config@5.0.0-alpha.11":
-  version "5.0.0-alpha.11"
-  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-5.0.0-alpha.11.tgz#fb2514258cec6d1a084fd419d05780780419d934"
-  integrity sha512-tXHIV/n26AeLQ/Bacn+JM/mTfR+zTINpahu+hhqcSGmr7X6V7aoqkKipWLT3MLs69ysuiPQAoKRnmFkPswoVXg==
+"@softwareventures/eslint-config@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-5.0.1.tgz#b981a60ef6a3f5718d30e3c3c2e80122dd262057"
+  integrity sha512-aMaCmi8MkbvtXAMXS/crLtVtypDO7NCfiMheRwrGc9RscGsFpuLpLXjzwGK7XrJuZnFQVmZNOSGLBNAAciLSQQ==
   dependencies:
-    "@typescript-eslint/eslint-plugin" "^5.3.0"
-    "@typescript-eslint/parser" "^5.3.0"
+    "@typescript-eslint/eslint-plugin" "^5.3.0 || ^5.0.0"
+    "@typescript-eslint/parser" "^5.3.0 || ^5.0.0"
     eslint-config-prettier "^8.3.0"
     eslint-plugin-import "^2.25.2"
     eslint-plugin-jsdoc "^37.0.3"
@@ -861,7 +861,7 @@
   dependencies:
     "@types/node" "*"
 
-"@typescript-eslint/eslint-plugin@^5.3.0":
+"@typescript-eslint/eslint-plugin@^5.3.0 || ^5.0.0":
   version "5.10.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.10.0.tgz#e90afea96dff8620892ad216b0e4ccdf8ee32d3a"
   integrity sha512-XXVKnMsq2fuu9K2KsIxPUGqb6xAImz8MEChClbXmE3VbveFtBUU5bzM6IPVWqzyADIgdkS2Ws/6Xo7W2TeZWjQ==
@@ -876,7 +876,7 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.3.0":
+"@typescript-eslint/parser@^5.3.0 || ^5.0.0":
   version "5.10.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.10.0.tgz#8f59e036f5f1cffc178cacbd5ccdd02aeb96c91c"
   integrity sha512-pJB2CCeHWtwOAeIxv8CHVGJhI5FNyJAIpx5Pt72YkK3QfEzt6qAlXZuyaBmyfOdM62qU0rbxJzNToPTVeJGrQw==
