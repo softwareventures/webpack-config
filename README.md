@@ -45,7 +45,7 @@ We also recommend that you add a `build` and `start` script to `package.json`:
 ```json
 {
     "scripts": {
-        "build": "webpack --env.production",
+        "build": "webpack --env production",
         "start": "webpack-dev-server --open"
     }
 }
