@@ -10,6 +10,10 @@ Ventures Limited, but can also be used by others.
 Configuring webpack from scratch is time-consuming and complicated. This package
 provides a standard webpack configuration that is suitable for most projects.
 
+## Upgrading from v3 or earlier
+
+See [Upgrade Guide](docs/Upgrade-Guide.md).
+
 ## Setup
 
 Add a dependency on this package, webpack, and webpack-dev-server, for example
