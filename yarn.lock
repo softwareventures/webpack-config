@@ -554,10 +554,10 @@
   dependencies:
     tslib "2.3.0"
 
-"@softwareventures/tsconfig@^6.0.0-alpha.2":
-  version "6.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-6.0.0-alpha.4.tgz#b818894d87ad5d9d82b498ac71d3ad03f6580b7d"
-  integrity sha512-gcujWlSVV0FA9DyCh6ob9SSCkqB653iK+73pi2AFD3cn8bAVC3DE0BtnSi3Nemv1GYwKep51buPIM19tQqSibA==
+"@softwareventures/tsconfig@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-6.0.0.tgz#af2409b589ff2171fda173a2685b34eedc9cdeeb"
+  integrity sha512-ZPZgEZqbnZ1ZRlj0oZEaXdyQD8us4AADYVaYFwNgGKbHe2O/u9M4IEpqzvgC6QER1S3DSH0XSXS6WODyJhyvlg==
 
 "@tootallnate/once@1":
   version "1.1.2"

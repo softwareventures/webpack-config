@@ -23,7 +23,7 @@
     "@softwareventures/array": "5.0.0",
     "@softwareventures/dictionary": "^0.7.1 || ^0.8.0 || ^1.0.0",
     "@softwareventures/nullable": "^2.0.0",
-    "@softwareventures/tsconfig": "^6.0.0-alpha.2",
+    "@softwareventures/tsconfig": "^6.0.0",
     "clean-webpack-plugin": "^3.0.0 || ^4.0.0",
     "css-loader": "^6.0.0",
     "cssnano": "^4.1.10 || ^5.0.0",
