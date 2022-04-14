@@ -60,6 +60,7 @@ namespace WebpackConfig {
          *
          * Set to the empty string to disable this feature.
          *
+         * @deprecated Deprecated, use `css: { namespace: "sv" }` instead.
          * @default "sv" */
         readonly vendor?: string;
 
@@ -121,6 +122,35 @@ namespace WebpackConfig {
              *
              * @default "load-from-html" */
             readonly mode?: "embed-in-js" | "load-from-html";
+
+            /** CSS Modules configuration.
+             *
+             * If set to an object, CSS Modules are enabled. In this case CSS
+             * class names are mangled at compile time. This is useful when
+             * composing together components which each have their own CSS, to
+             * prevent name conflicts between unrelated CSS Modules.
+             *
+             * If set to `false`, CSS Modules are disabled, and CSS class names
+             * are not mangled. This is useful when CSS class names must be
+             * maintained as-is at runtime, for example because the class names
+             * are referenced from static HTML.
+             *
+             * By default, CSS modules are enabled.
+             *
+             * @see https://github.com/css-modules/css-modules
+             *
+             * @default { namespace: "sv" } */
+            readonly modules?:
+                | {
+                      /** A namespace that is prefixed to all CSS class names, to
+                       * further reduce the likelihood of name conflicts.
+                       *
+                       * Defaults to `"sv"`, for Software Ventures Limited.
+                       *
+                       * @default "sv" */
+                      readonly namespace?: string;
+                  }
+                | false;
         };
 
         /** Callback that provides an opportunity to customize the webpack
@@ -178,9 +208,14 @@ function WebpackConfig(
         const destDir =
             project.destDir == null ? resolve(rootDir, "dist") : resolve(rootDir, project.destDir);
 
-        const vendor = project.vendor ?? "sv";
+        const cssModules =
+            project.css?.modules === false
+                ? null
+                : project.css?.modules == null
+                ? {namespace: project.vendor ?? "sv"}
+                : {...project.css.modules, namespace: project.css.modules.namespace ?? "sv"};
 
-        const vendorCssId = vendor.replace(/[[\]]/gu, "_");
+        const cssModulesNamespace = cssModules?.namespace ?? null;
 
         const entry: WebpackConfig.Entry = project.entry ?? "./index.js";
 
@@ -241,16 +276,19 @@ function WebpackConfig(
             options: {
                 importLoaders: mode === "development" ? 1 : 0,
                 esModule: true,
-                modules: {
-                    mode: "local",
-                    localIdentName:
-                        mode === "development"
-                            ? "[local]-[sha256:contenthash:base64:5]"
-                            : vendorCssId + "[sha256:contenthash:base64:5]",
-                    namedExport: false,
-                    exportGlobals: true,
-                    exportLocalsConvention: "asIs"
-                }
+                modules:
+                    cssModulesNamespace == null
+                        ? false
+                        : {
+                              mode: "local",
+                              localIdentName:
+                                  mode === "development"
+                                      ? "[local]-[sha256:contenthash:base64:5]"
+                                      : cssModulesNamespace + "[sha256:contenthash:base64:5]",
+                              namedExport: false,
+                              exportGlobals: true,
+                              exportLocalsConvention: "asIs"
+                          }
             }
         };
 
