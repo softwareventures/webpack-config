@@ -4,3 +4,5 @@ node_modules
 *.d.ts
 *.js.map
 !/types/*.d.ts
+!/asset-loaders.d.ts
+!/webpack-config-runtime.d.ts
