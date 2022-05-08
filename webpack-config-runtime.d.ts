@@ -77,3 +77,12 @@ declare module "*.htm" {
     const url: string;
     export = url;
 }
+
+declare namespace NodeJS {
+    interface Process {
+        readonly env: {
+            readonly [key: string]: unknown;
+            readonly NODE_ENV: string;
+        };
+    }
+}
