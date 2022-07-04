@@ -576,6 +576,15 @@
     "@softwareventures/ordered" "^0.2.0 || ^1.0.0"
     tslib "^2.0.0"
 
+"@softwareventures/array@5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-5.2.0.tgz#235a8427378b84f18031a09ede0142d6ec6a8e67"
+  integrity sha512-vVleJME+wOObPdbgYLYwiVN3VV48gzA6I86fOzpNwjk1rFtVtEttVO9lUcGUrXoNaFwYNM+I9VfLaLqaiKdbxA==
+  dependencies:
+    "@softwareventures/nullable" "^1.0.0 || ^1.0.0 || ^1.2.1 || ^2.0.0"
+    "@softwareventures/ordered" "^0.2.0 || ^1.0.0"
+    tslib "^2.0.0"
+
 "@softwareventures/dictionary@^0.7.1 || ^0.8.0 || ^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-1.0.1.tgz#e814796650820addae62fa4ced76a0900cb46b85"
