@@ -106,6 +106,5 @@
   },
   "release": {
     "extends": "@softwareventures/semantic-release-config"
-  },
-  "snyk": true
+  }
 }
