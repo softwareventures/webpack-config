@@ -582,19 +582,19 @@
   dependencies:
     tslib "^2.3.1"
 
-"@softwareventures/nullable@2.0.0", "@softwareventures/nullable@^1.0.0 || ^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/nullable/-/nullable-2.0.0.tgz#d11498c5fe71bb0b94ba85a40e774c19c721c5d3"
-  integrity sha512-zx+FMgB4MqmqIiCglgP8GZIYPw57yFBuz/jh0kXNAoEtSRl3LkwhaGG0b/y5yae2RsYSaVkNotQaSmJRt5GahA==
-  dependencies:
-    tslib "2.3.0"
-
-"@softwareventures/nullable@^2.0.0 || ^3.0.0":
+"@softwareventures/nullable@3.0.0", "@softwareventures/nullable@^2.0.0 || ^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/nullable/-/nullable-3.0.0.tgz#979045c99e7c8a9055cb25c3c5cb5b9edfc50085"
   integrity sha512-kgYOGJHzgZl0QGqMqbRe34i5VaRQUsG+X9AcblJL1lGDq+npLsCS974VSJmOBxnSqIQ5dcgah+zBxHndH8qzfg==
   dependencies:
     tslib "2.4.0"
+
+"@softwareventures/nullable@^1.0.0 || ^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/nullable/-/nullable-2.0.0.tgz#d11498c5fe71bb0b94ba85a40e774c19c721c5d3"
+  integrity sha512-zx+FMgB4MqmqIiCglgP8GZIYPw57yFBuz/jh0kXNAoEtSRl3LkwhaGG0b/y5yae2RsYSaVkNotQaSmJRt5GahA==
+  dependencies:
+    tslib "2.3.0"
 
 "@softwareventures/ordered@^1.1.0":
   version "1.1.0"
@@ -603,13 +603,13 @@
   dependencies:
     tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
-"@softwareventures/precise-commits@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/precise-commits/-/precise-commits-3.0.1.tgz#08308ae47979f09cd62f6a7ecaf8ece83d97707e"
-  integrity sha512-TRK0thH6Dyp/MTU3xPq8KPyuw9EpilZAvhF6Npvz7RPbtUNYRt/8DQtdidI1iId4810q7xZyEbgXuAcRz1p0mA==
+"@softwareventures/precise-commits@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@softwareventures/precise-commits/-/precise-commits-3.0.2.tgz#9845b7373c3fc3ce5e325c43dc3f956166a3f03a"
+  integrity sha512-3rr6qkdXYTzHCgPxLs7IU3iWh7QW+1EMDIbqVE7fOhLCDrWvI+cA2k1C3ZovcohMTd+4dGD5Cn82CdkJOFODAA==
   dependencies:
     "@softwareventures/array" "5.3.0"
-    "@softwareventures/nullable" "2.0.0"
+    "@softwareventures/nullable" "3.0.0"
     execa "5.1.1"
     find-up "5.0.0"
     glob "8.0.3"
