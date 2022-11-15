@@ -7,7 +7,6 @@ npm-debug.log*
 *.js
 *.d.ts
 *.js.map
-!/asset-loaders.d.ts
 !/webpack-config-runtime.d.ts
 !/types/*.d.ts
 
