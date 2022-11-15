@@ -84,7 +84,7 @@ following contents:
     "compilerOptions": {
         "types": [
             "webpack-env",
-            "@softwareventures/webpack-config/asset-loaders"
+            "@softwareventures/webpack-config/webpack-config-runtime"
         ]
     }
 }
