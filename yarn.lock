@@ -567,13 +567,13 @@
     "@softwareventures/ordered" "^1.1.0"
     tslib "^2.0.0"
 
-"@softwareventures/dictionary@^0.7.1 || ^0.8.0 || ^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-1.0.1.tgz#e814796650820addae62fa4ced76a0900cb46b85"
-  integrity sha512-DjQgflEuaDHsw8Jj67n9/XzkBLAmOITxEbWHQoOkv67P8w8KHLCASz3dZuBdcQCiUcwrJyWTIoTS+Zhj/lDjhg==
+"@softwareventures/dictionary@^0.7.1 || ^0.8.0 || ^1.0.0 || ^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-2.0.0.tgz#edc7e34a780047f075a7d3cb4d5a5ce7862f02fc"
+  integrity sha512-ALbI66/uW7E05ymicankjtoqmVdFsmJ1nJaF1ZgoUvAR5RW2mTAcWl2wcU4Ldw+OJ2onDriDuRlWpIBh3N3tWw==
   dependencies:
     dictionary-types "^1.2.0 || ^2.0.0"
-    tslib "2.3.0"
+    tslib "2.4.0"
 
 "@softwareventures/eslint-config@7.0.1":
   version "7.0.1"
