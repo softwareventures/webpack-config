@@ -567,13 +567,13 @@
     "@softwareventures/ordered" "^1.1.0"
     tslib "^2.0.0"
 
-"@softwareventures/dictionary@^0.7.1 || ^0.8.0 || ^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-1.0.1.tgz#e814796650820addae62fa4ced76a0900cb46b85"
-  integrity sha512-DjQgflEuaDHsw8Jj67n9/XzkBLAmOITxEbWHQoOkv67P8w8KHLCASz3dZuBdcQCiUcwrJyWTIoTS+Zhj/lDjhg==
+"@softwareventures/dictionary@^0.7.1 || ^0.8.0 || ^1.0.0 || ^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-2.0.0.tgz#edc7e34a780047f075a7d3cb4d5a5ce7862f02fc"
+  integrity sha512-ALbI66/uW7E05ymicankjtoqmVdFsmJ1nJaF1ZgoUvAR5RW2mTAcWl2wcU4Ldw+OJ2onDriDuRlWpIBh3N3tWw==
   dependencies:
     dictionary-types "^1.2.0 || ^2.0.0"
-    tslib "2.3.0"
+    tslib "2.4.0"
 
 "@softwareventures/eslint-config@7.0.1":
   version "7.0.1"
@@ -4743,9 +4743,9 @@ klona@^2.0.4, klona@^2.0.5:
   integrity sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==
 
 "less-loader@^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-11.0.0.tgz#a31b2bc5cdfb62f1c7de9b2d01cd944c22b1a024"
-  integrity sha512-9+LOWWjuoectIEx3zrfN83NAGxSUB5pWEabbbidVQVgZhN+wN68pOvuyirVlH1IK4VT1f3TmlyvAnCXh8O5KEw==
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-11.1.0.tgz#a452384259bdf8e4f6d5fdcc39543609e6313f82"
+  integrity sha512-C+uDBV7kS7W5fJlUjq5mPBeBVhYpTIm5gB09APT9o3n/ILeaXVsiSFTbZpTJCJwQ/Crczfn3DmfQFwxYusWFug==
   dependencies:
     klona "^2.0.4"
 
@@ -5620,7 +5620,6 @@ npm@^8.3.0:
     "@npmcli/fs" "^2.1.0"
     "@npmcli/map-workspaces" "^2.0.3"
     "@npmcli/package-json" "^2.0.0"
-    "@npmcli/promise-spawn" "^3.0.0"
     "@npmcli/run-script" "^4.2.1"
     abbrev "~1.1.1"
     archy "~1.0.0"
@@ -5631,7 +5630,6 @@ npm@^8.3.0:
     cli-table3 "^0.6.2"
     columnify "^1.6.0"
     fastest-levenshtein "^1.0.12"
-    fs-minipass "^2.1.0"
     glob "^8.0.1"
     graceful-fs "^4.2.10"
     hosted-git-info "^5.1.0"
@@ -5651,7 +5649,6 @@ npm@^8.3.0:
     libnpmteam "^4.0.4"
     libnpmversion "^3.0.7"
     make-fetch-happen "^10.2.0"
-    minimatch "^5.1.0"
     minipass "^3.1.6"
     minipass-pipeline "^1.2.4"
     mkdirp "^1.0.4"
@@ -6146,9 +6143,9 @@ postcss-discard-overridden@^5.1.0:
   integrity sha512-21nOL7RqWR1kasIVdKs8HNqQJhFxLsyRfAnUDm4Fe4t4mCWL9OJiHvlHPjcd8zc5Myu89b/7wZDnOSjFgeWRtw==
 
 "postcss-loader@^5.0.0 || ^6.0.0 || ^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-7.0.0.tgz#367d10eb1c5f1d93700e6b399683a6dc7c3af396"
-  integrity sha512-IDyttebFzTSY6DI24KuHUcBjbAev1i+RyICoPEWcAstZsj03r533uMXtDn506l6/wlsRYiS5XBdx7TpccCsyUg==
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-7.0.1.tgz#4c883cc0a1b2bfe2074377b7a74c1cd805684395"
+  integrity sha512-VRviFEyYlLjctSM93gAZtcJJ/iSkPZ79zWbN/1fSH+NisBByEiVLqpdVDrPLVSi8DX0oJo12kL/GppTBdKVXiQ==
   dependencies:
     cosmiconfig "^7.0.0"
     klona "^2.0.5"
@@ -6722,7 +6719,7 @@ resolve-global@^1.0.0:
   dependencies:
     global-dirs "^0.1.1"
 
-"resolve-typescript-plugin@^1.1.2-alpha.1 || ^2.0.0":
+"resolve-typescript-plugin@^1.1.2 || ^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-typescript-plugin/-/resolve-typescript-plugin-2.0.0.tgz#1c4c91e6cc37ee82b1093586fe9ac531247456a7"
   integrity sha512-bkQMP9BVupQfZM9N6SS/QOy6PZh4dL4/d9LBhC+fmb5CdE6geGcm2fZUfXii2xXqwmCOu4xp2QTAnZhIBwGadQ==
