@@ -323,8 +323,8 @@ function WebpackConfig(
                 esModule: false,
                 name:
                     mode === "development"
-                        ? "[path][name]-[sha256:contenthash:base64:8].[ext]"
-                        : "[sha256:contenthash:base64:8].[ext]"
+                        ? "[path][name]-[sha256:contenthash:base62:8].[ext]"
+                        : "[sha256:contenthash:base62:8].[ext]"
             }
         };
 
