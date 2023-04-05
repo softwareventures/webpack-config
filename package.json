@@ -96,7 +96,7 @@
     "prettier": "2.8.7",
     "semantic-release": "19.0.5",
     "typescript": "5.0.3",
-    "webpack": "5.77.0"
+    "webpack": "5.78.0"
   },
   "eslintConfig": {
     "root": true,
