@@ -14,7 +14,6 @@ import TerserPlugin = require("terser-webpack-plugin");
 import type {Configuration, RuleSetUse} from "webpack";
 import {DefinePlugin} from "webpack";
 import type {Options as HtmlMinifierOptions} from "html-minifier-terser";
-import ResolveTypescriptPlugin from "resolve-typescript-plugin";
 import {hasProperty} from "unknown";
 import {notNull} from "@softwareventures/nullable";
 
@@ -391,7 +390,10 @@ function WebpackConfig(
                 ]
             },
             resolve: {
-                plugins: [new ResolveTypescriptPlugin()]
+                extensionAlias: {
+                    ".js": [".ts", ".js"],
+                    ".mjs": [".mts", ".mjs"]
+                }
             },
             devtool: mode === "development" ? "inline-source-map" : false,
             optimization:
