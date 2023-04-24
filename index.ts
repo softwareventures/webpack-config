@@ -5,7 +5,6 @@ import {
     map as dictionaryMap,
     merge as dictionaryMerge
 } from "@softwareventures/dictionary";
-import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import cssnano = require("cssnano");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import type {Object as JsonObject} from "json-typescript";
@@ -423,7 +422,6 @@ function WebpackConfig(
                           ]
                       },
             plugins: [
-                ...(mode === "development" ? [] : [new CleanWebpackPlugin()]),
                 new DefinePlugin(dictionaryMap(define, value => JSON.stringify(value))),
                 ...(extractCss ? [new MiniCssExtractPlugin()] : []),
                 ...(project.html === false ? [] : [new HtmlWebpackPlugin(htmlOptions)])
@@ -433,6 +431,7 @@ function WebpackConfig(
             },
             output: {
                 path: destDir,
+                clean: true,
                 publicPath: "",
                 devtoolModuleFilenameTemplate: "[resource-path]?[loaders]",
                 assetModuleFilename:
