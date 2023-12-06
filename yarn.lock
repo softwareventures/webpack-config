@@ -883,10 +883,10 @@
     "@types/relateurl" "*"
     "@types/uglify-js" "*"
 
-"@types/html-webpack-plugin@3.2.7":
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/@types/html-webpack-plugin/-/html-webpack-plugin-3.2.7.tgz#2cdc76cba2613bd06c9f847a76b1f86c1fbaa8f7"
-  integrity sha512-eL2G6DhLxLiDDKtKc55cUyAvEcQC5S73t9trynaEAv/N3YOcX/XDHi4BqfPjT7c2G+v2BBAmkyI1JyusfJlm5A==
+"@types/html-webpack-plugin@3.2.9":
+  version "3.2.9"
+  resolved "https://registry.yarnpkg.com/@types/html-webpack-plugin/-/html-webpack-plugin-3.2.9.tgz#9c94e8f4af5066d845b170245ec0f7bf3bda8188"
+  integrity sha512-puFExKcpqjZ27RYnRcsPLPXY+6tnBpyqVrJdLOx1NwiwCdqhyzLui8K2WVQTTUsR+0hhb2Y02Cjsdj540FlgZw==
   dependencies:
     "@types/html-minifier" "*"
     "@types/tapable" "^1"
