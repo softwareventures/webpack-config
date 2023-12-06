@@ -643,7 +643,7 @@
     "@softwareventures/ordered" "^1.1.0 || ^2.0.0"
     tslib "^2.0.0"
 
-"@softwareventures/dictionary@^0.7.1 || ^0.8.0 || ^1.0.0 || ^2.0.0":
+"@softwareventures/dictionary@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-2.1.1.tgz#34596e388120dfa4da501302ed25a84c06847006"
   integrity sha512-pic3dgq4N249Wgwii6wmeyYAQ61nNwJljg4nH9tq++H9ldMASMrrhuu8pLT4C5EneMaiOXI8TBmfzupNDiVpOQ==
