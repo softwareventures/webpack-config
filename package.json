@@ -8,6 +8,7 @@
   "repository": "github:softwareventures/webpack-config",
   "license": "ISC",
   "scripts": {
+    "commit": "cz",
     "fix": "tsc --noEmit && eslint . --fix && prettier --write .",
     "lint": "tsc --noEmit && eslint . && prettier --check .",
     "prepare": "husky install && tsc",
@@ -66,6 +67,9 @@
     "webpack-dev-server": "^4.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "18.4.3",
+    "@commitlint/config-conventional": "18.4.3",
+    "@commitlint/cz-commitlint": "18.4.3",
     "@softwareventures/eslint-config": "7.1.4",
     "@softwareventures/precise-commits": "3.0.30",
     "@softwareventures/prettier-config": "4.0.0",
@@ -77,8 +81,8 @@
     "@types/webpack-dev-server": "4.7.2",
     "@typescript-eslint/eslint-plugin": "6.13.2",
     "@typescript-eslint/parser": "6.13.2",
+    "commitizen": "4.3.0",
     "conventional-changelog-conventionalcommits": "7.0.2",
-    "cz-conventional-changelog": "3.3.0",
     "eslint": "8.55.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.0",
@@ -86,6 +90,7 @@
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-sonarjs": "0.23.0",
     "husky": "8.0.3",
+    "inquirer": "9.2.12",
     "prettier": "2.8.8",
     "semantic-release": "22.0.10",
     "typescript": "5.2.2",
@@ -101,7 +106,7 @@
   "prettier": "@softwareventures/prettier-config",
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/@commitlint/cz-commitlint"
     }
   },
   "release": {
