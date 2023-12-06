@@ -10,7 +10,6 @@
   "scripts": {
     "fix": "tsc --noEmit && eslint . --fix && prettier --write .",
     "lint": "tsc --noEmit && eslint . && prettier --check .",
-    "pre-commit": "precise-commits",
     "prepare": "husky install && tsc",
     "semantic-release": "semantic-release",
     "test": "echo No tests yet"
