@@ -5,7 +5,6 @@ import {
     map as dictionaryMap,
     merge as dictionaryMerge
 } from "@softwareventures/dictionary";
-import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import cssnano = require("cssnano");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import type {Object as JsonObject} from "json-typescript";
@@ -14,7 +13,6 @@ import TerserPlugin = require("terser-webpack-plugin");
 import type {Configuration, RuleSetUse} from "webpack";
 import {DefinePlugin} from "webpack";
 import type {Options as HtmlMinifierOptions} from "html-minifier-terser";
-import ResolveTypescriptPlugin from "resolve-typescript-plugin";
 import {hasProperty} from "unknown";
 import {notNull} from "@softwareventures/nullable";
 
@@ -391,7 +389,10 @@ function WebpackConfig(
                 ]
             },
             resolve: {
-                plugins: [new ResolveTypescriptPlugin()]
+                extensionAlias: {
+                    ".js": [".ts", ".js"],
+                    ".mjs": [".mts", ".mjs"]
+                }
             },
             devtool: mode === "development" ? "inline-source-map" : false,
             optimization:
@@ -421,7 +422,6 @@ function WebpackConfig(
                           ]
                       },
             plugins: [
-                ...(mode === "development" ? [] : [new CleanWebpackPlugin()]),
                 new DefinePlugin(dictionaryMap(define, value => JSON.stringify(value))),
                 ...(extractCss ? [new MiniCssExtractPlugin()] : []),
                 ...(project.html === false ? [] : [new HtmlWebpackPlugin(htmlOptions)])
@@ -431,6 +431,7 @@ function WebpackConfig(
             },
             output: {
                 path: destDir,
+                clean: true,
                 publicPath: "",
                 devtoolModuleFilenameTemplate: "[resource-path]?[loaders]",
                 assetModuleFilename:
