@@ -1022,10 +1022,10 @@
   dependencies:
     source-map "^0.6.1"
 
-"@types/webpack-dev-server@4.7.1":
-  version "4.7.1"
-  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-4.7.1.tgz#fd6766d85fd91de7d2242a0131075b4c247414df"
-  integrity sha512-T6UeAUQWojf1toimSIf6sBwaO4HQ4iHdF4BL2RbPbzKTqe5blB7Iih7i7h69NSg/fOjWlkdszNPlaWD1/aX5LQ==
+"@types/webpack-dev-server@4.7.2":
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-4.7.2.tgz#a12d9881aa23cdd4cecbb2d31fa784a45c4967e0"
+  integrity sha512-Y3p0Fmfvp0MHBDoCzo+xFJaWTw0/z37mWIo6P15j+OtmUDLvznJWdZNeD7Q004R+MpQlys12oXbXsrXRmxwg4Q==
   dependencies:
     webpack-dev-server "*"
 
@@ -7762,10 +7762,20 @@ terser-webpack-plugin@^5.1.1, terser-webpack-plugin@^5.3.7:
     serialize-javascript "^6.0.1"
     terser "^5.16.8"
 
-terser@^5.10.0, terser@^5.15.1, terser@^5.16.8, terser@^5.3.8:
+terser@^5.10.0, terser@^5.15.1, terser@^5.16.8:
   version "5.18.2"
   resolved "https://registry.yarnpkg.com/terser/-/terser-5.18.2.tgz#ff3072a0faf21ffd38f99acc9a0ddf7b5f07b948"
   integrity sha512-Ah19JS86ypbJzTzvUCX7KOsEIhDaRONungA4aYBjEP3JZRf4ocuDzTg4QWZnPn9DEMiMYGJPiSOy7aykoCc70w==
+  dependencies:
+    "@jridgewell/source-map" "^0.3.3"
+    acorn "^8.8.2"
+    commander "^2.20.0"
+    source-map-support "~0.5.20"
+
+terser@^5.3.8:
+  version "5.25.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-5.25.0.tgz#6579b4cca45b08bf0fdaa1a04605fd5860dfb2ac"
+  integrity sha512-we0I9SIsfvNUMP77zC9HG+MylwYYsGFSBG8qm+13oud2Yh+O104y614FRbyjpxys16jZwot72Fpi827YvGzuqg==
   dependencies:
     "@jridgewell/source-map" "^0.3.3"
     acorn "^8.8.2"
@@ -8213,7 +8223,7 @@ webpack-sources@^3.2.3:
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-3.2.3.tgz#2d4daab8451fd4b240cc27055ff6a0c2ccea0cde"
   integrity sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
 
-webpack@5.89.0:
+webpack@5.89.0, webpack@^5.1.0:
   version "5.89.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.89.0.tgz#56b8bf9a34356e93a6625770006490bf3a7f32dc"
   integrity sha512-qyfIC10pOr70V+jkmud8tMfajraGCZMBWJtrmuBymQKCrLTRejBI8STDp1MCyZu/QTdZSeacCQYpYNQVOzX5kw==
@@ -8243,7 +8253,7 @@ webpack@5.89.0:
     watchpack "^2.4.0"
     webpack-sources "^3.2.3"
 
-webpack@^5, webpack@^5.1.0:
+webpack@^5:
   version "5.88.2"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.88.2.tgz#f62b4b842f1c6ff580f3fcb2ed4f0b579f4c210e"
   integrity sha512-JmcgNZ1iKj+aiR0OvTYtWQqJwq37Pf683dY9bVORwVbUrDhLhdn/PlO2sHsFHPkj7sHNQF3JwaAkp49V+Sq1tQ==
