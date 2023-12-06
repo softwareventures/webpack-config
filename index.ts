@@ -311,9 +311,7 @@ function WebpackConfig(
 
         const extractCss =
             mode !== "development" &&
-            (project.css == null ||
-                project.css.mode == null ||
-                project.css.mode === "load-from-html");
+            (project.css?.mode == null || project.css.mode === "load-from-html");
 
         const fileLoader = {
             loader: require.resolve("file-loader"),
