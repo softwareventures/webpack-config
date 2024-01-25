@@ -65,19 +65,19 @@
     "@commitlint/types" "^18.6.0"
     ajv "^8.11.0"
 
-"@commitlint/cz-commitlint@18.5.0":
-  version "18.5.0"
-  resolved "https://registry.yarnpkg.com/@commitlint/cz-commitlint/-/cz-commitlint-18.5.0.tgz#2c111c15c3fd6d30c59261cf5799ec027197cb33"
-  integrity sha512-3kXAdK5KjadJWvGXrVc1GTINJxlEnx3NE9m1L0wByw4D71QDfbNFH7MuB2b78A94qzb8drPEvXZgOYY57PpUUQ==
+"@commitlint/cz-commitlint@18.6.0":
+  version "18.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/cz-commitlint/-/cz-commitlint-18.6.0.tgz#a8e5f28713bbaf1339b9cdecfd60e1c72f9829ea"
+  integrity sha512-TiubGHwvqrPp8Bf+X4XnhBJ+933ouVb06z/xYejspxe1ZniGaPPyB9EzMfCwMUFrcuOjwIP0GSI4ChHLJ5pRvQ==
   dependencies:
-    "@commitlint/ensure" "^18.4.4"
-    "@commitlint/load" "^18.5.0"
-    "@commitlint/types" "^18.4.4"
+    "@commitlint/ensure" "^18.6.0"
+    "@commitlint/load" "^18.6.0"
+    "@commitlint/types" "^18.6.0"
     chalk "^4.1.0"
     lodash.isplainobject "^4.0.6"
     word-wrap "^1.2.5"
 
-"@commitlint/ensure@^18.4.4", "@commitlint/ensure@^18.6.0":
+"@commitlint/ensure@^18.6.0":
   version "18.6.0"
   resolved "https://registry.yarnpkg.com/@commitlint/ensure/-/ensure-18.6.0.tgz#3f3dc09d99016eaab0da9423123effd820d11931"
   integrity sha512-xY07NmOBJ7JuhX3tic021PaeLepZARIQyqpAQoNQZoml1keBFfB6MbA7XlWZv0ebbarUFE4yhKxOPw+WFv7/qw==
@@ -120,7 +120,7 @@
     "@commitlint/rules" "^18.6.0"
     "@commitlint/types" "^18.6.0"
 
-"@commitlint/load@>6.1.1", "@commitlint/load@^18.5.0", "@commitlint/load@^18.6.0":
+"@commitlint/load@>6.1.1", "@commitlint/load@^18.6.0":
   version "18.6.0"
   resolved "https://registry.yarnpkg.com/@commitlint/load/-/load-18.6.0.tgz#98108294b9383aa2905781b192215df4718babb7"
   integrity sha512-RRssj7TmzT0bowoEKlgwg8uQ7ORXWkw7lYLsZZBMi9aInsJuGNLNWcMxJxRZbwxG3jkCidGUg85WmqJvRjsaDA==
@@ -196,7 +196,7 @@
   dependencies:
     find-up "^5.0.0"
 
-"@commitlint/types@^18.4.4", "@commitlint/types@^18.6.0":
+"@commitlint/types@^18.6.0":
   version "18.6.0"
   resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-18.6.0.tgz#3d3493cb5910f60f3749a8eb56aca47dc2e1b662"
   integrity sha512-oavoKLML/eJa2rJeyYSbyGAYzTxQ6voG5oeX3OrxpfrkRWhJfm4ACnhoRf5tgiybx2MZ+EVFqC1Lw3W8/uwpZA==
