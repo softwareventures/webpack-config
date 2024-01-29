@@ -89,7 +89,7 @@
     "eslint-plugin-jsdoc": "46.10.1",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-sonarjs": "0.23.0",
-    "husky": "8.0.3",
+    "husky": "9.0.7",
     "inquirer": "9.2.13",
     "prettier": "2.8.8",
     "semantic-release": "22.0.12",
