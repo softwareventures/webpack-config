@@ -93,7 +93,7 @@
     "inquirer": "9.2.16",
     "prettier": "2.8.8",
     "semantic-release": "22.0.12",
-    "typescript": "5.4.2",
+    "typescript": "5.4.3",
     "webpack": "5.91.0"
   },
   "eslintConfig": {
