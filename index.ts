@@ -210,8 +210,8 @@ function WebpackConfig(
             project.css?.modules === false
                 ? null
                 : project.css?.modules == null
-                ? {namespace: project.vendor ?? "sv"}
-                : {...project.css.modules, namespace: project.css.modules.namespace ?? "sv"};
+                  ? {namespace: project.vendor ?? "sv"}
+                  : {...project.css.modules, namespace: project.css.modules.namespace ?? "sv"};
 
         const cssModulesNamespace = cssModules?.namespace ?? null;
 
