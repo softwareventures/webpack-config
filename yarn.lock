@@ -850,10 +850,10 @@
   dependencies:
     tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
-"@softwareventures/precise-commits@4.0.9":
-  version "4.0.9"
-  resolved "https://registry.yarnpkg.com/@softwareventures/precise-commits/-/precise-commits-4.0.9.tgz#0d8d50675663136dffa4ee6f9f936f18155a64f5"
-  integrity sha512-Xp0fBwN/k3ewshC251NqvIqI3TLt0hBOyRaQulSgO8eCcueKVjdZBrNNAgJD5tuxyg95YEj+IU7MlRk2oaVEWg==
+"@softwareventures/precise-commits@4.0.10":
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/@softwareventures/precise-commits/-/precise-commits-4.0.10.tgz#4dbed50a6413f2a7c3071c3ab96bfab88102185f"
+  integrity sha512-nI2P9uScsK1kej7/4vwrqP1I3oRXjtUaWLv/gIVpjXwQSQ6vE0QNHs1GNr5Z0+FPPSX6AR1ph60EN/6BwV+9bQ==
   dependencies:
     "@softwareventures/array" "7.0.0"
     "@softwareventures/nullable" "3.2.0"
