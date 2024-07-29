@@ -92,7 +92,7 @@
     "husky": "9.1.4",
     "inquirer": "9.3.6",
     "prettier": "3.3.3",
-    "semantic-release": "22.0.12",
+    "semantic-release": "24.0.0",
     "typescript": "5.5.4",
     "webpack": "5.93.0"
   },
