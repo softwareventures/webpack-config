@@ -17,7 +17,7 @@
   },
   "sideEffects": false,
   "engines": {
-    "node": "^14 || ^16 || >=18"
+    "node": "^18 || ^20 || >=22"
   },
   "dependencies": {
     "@softwareventures/array": "^7.0.0",
