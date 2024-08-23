@@ -210,8 +210,8 @@ function WebpackConfig(
             project.css?.modules === false
                 ? null
                 : project.css?.modules == null
-                ? {namespace: project.vendor ?? "sv"}
-                : {...project.css.modules, namespace: project.css.modules.namespace ?? "sv"};
+                  ? {namespace: project.vendor ?? "sv"}
+                  : {...project.css.modules, namespace: project.css.modules.namespace ?? "sv"};
 
         const cssModulesNamespace = cssModules?.namespace ?? null;
 
@@ -311,9 +311,7 @@ function WebpackConfig(
 
         const extractCss =
             mode !== "development" &&
-            (project.css == null ||
-                project.css.mode == null ||
-                project.css.mode === "load-from-html");
+            (project.css?.mode == null || project.css.mode === "load-from-html");
 
         const fileLoader = {
             loader: require.resolve("file-loader"),
