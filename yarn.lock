@@ -866,12 +866,12 @@
   dependencies:
     tslib "2.4.0"
 
-"@softwareventures/semantic-release-config@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/semantic-release-config/-/semantic-release-config-5.0.0.tgz#b907d5d8d01033af74ae59dc550f576b21f44d60"
-  integrity sha512-kDIeHzkAvREMuNR5LjRJLaPPw4yAkofNJE5ziuHWn+65DQup+5D9gNXuTSnsdBKw1/XS1AqzO9wgqo4D/bP1hg==
+"@softwareventures/semantic-release-config@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/semantic-release-config/-/semantic-release-config-5.1.0.tgz#27b0a34550b0539f8f9b02c8f32a6780d2212502"
+  integrity sha512-vVSORLLx2G86ZjmFvE2qPHJqCJpwWO5S5xgg0/pilN69Xuoea79x6PD4nz501WQOUfmHlKJ/eZq9ytj3hRcdbQ==
   dependencies:
-    tslib "2.6.2"
+    tslib "2.8.1"
 
 "@softwareventures/tsconfig@^6.0.0 || ^7.0.0":
   version "7.1.1"
