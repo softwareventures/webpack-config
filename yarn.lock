@@ -873,10 +873,10 @@
   dependencies:
     tslib "2.8.1"
 
-"@softwareventures/tsconfig@^6.0.0 || ^7.0.0":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-7.1.1.tgz#10d520eab5f297f0c53c091372c12fb3a766b648"
-  integrity sha512-3IyogItde19NtQmI5F1zm1GUrf783u5/AsDoSPKpSCi7TXPnZgSdQY4+4hjrmRVhoH4mFPHM/OSdM5uqssnA/Q==
+"@softwareventures/tsconfig@^6.0.0 || ^7.0.0 || ^8.0.0":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-8.1.1.tgz#2146d2ff30e97f09fc2c7a9790de8ee88de2edd7"
+  integrity sha512-mxQXUiu1W/0GkUsKjpJkVmPRm7f8oVvrBxhsGiClyKzSX5kHHKH2cugIearDFDr53coNAgJsHrlrope9mKfXQQ==
 
 "@trysound/sax@0.2.0":
   version "0.2.0"
