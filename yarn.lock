@@ -805,10 +805,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/merge-streams/-/merge-streams-2.3.0.tgz#719df7fb41766bc143369eaa0dd56d8dc87c9958"
   integrity sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==
 
-"@softwareventures/array@7.0.0", "@softwareventures/array@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-7.0.0.tgz#0f1a62bb447c9156cdd35a2c636d42655a0e9e05"
-  integrity sha512-xHMS/7k0Iw/ivaeelC6+tePJYv/2R+LFUyuTuSJioZa+zumahtcN10aNDbogWXOa2QarvHPmfl/FC4v5MteEHQ==
+"@softwareventures/array@7.0.1", "@softwareventures/array@^7.0.0":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-7.0.1.tgz#c70d63c3a7ca53b41a8812977bc785a844227c41"
+  integrity sha512-9quO63WbI1y79q5qWAlBcOSgIK1X01gJGx3kLg83FkL0qfFR5AR7lDkvuphjooo4fxIZmnbzl0GvdI/PHHPIkg==
   dependencies:
     "@softwareventures/nullable" "^1.0.0 || ^2.0.0 || ^3.0.0"
     "@softwareventures/ordered" "^1.1.0 || ^2.0.0"
@@ -843,19 +843,19 @@
   dependencies:
     tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
-"@softwareventures/precise-commits@4.0.19":
-  version "4.0.19"
-  resolved "https://registry.yarnpkg.com/@softwareventures/precise-commits/-/precise-commits-4.0.19.tgz#437039ec164c6e70e3afb4c9587018097faefa90"
-  integrity sha512-En6qUKrSjkxLqZYWskVsJrsVoNhqpf1AIt26ov3hUP3guoHfpNQ7uy2fSYoy7AP4QUSVnd1cVxKHsO32swBQug==
+"@softwareventures/precise-commits@4.0.23":
+  version "4.0.23"
+  resolved "https://registry.yarnpkg.com/@softwareventures/precise-commits/-/precise-commits-4.0.23.tgz#17746960f09305e926dd750d5acc2f322c49bc5c"
+  integrity sha512-7p/vNPjjtGsRMvMtH4YTx4zhAVWUy7eGcJbhzi29MjJRxEISoLwFW59gI7xiqVM+2AsCuRH/W2PUk71rOrNaqQ==
   dependencies:
-    "@softwareventures/array" "7.0.0"
+    "@softwareventures/array" "7.0.1"
     "@softwareventures/nullable" "3.2.0"
     execa "5.1.1"
     glob "10.4.5"
     ignore "5.3.2"
     mri "1.2.0"
     ora "5.4.1"
-    rxjs "7.8.1"
+    rxjs "7.8.2"
     tslib "2.8.1"
     unknown "0.2.6"
 
@@ -7218,10 +7218,10 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rxjs@7.8.1, rxjs@^7.5.5, rxjs@^7.8.1:
-  version "7.8.1"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.8.1.tgz#6f6f3d99ea8044291efd92e7c7fcf562c4057543"
-  integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==
+rxjs@7.8.2, rxjs@^7.5.5, rxjs@^7.8.1:
+  version "7.8.2"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.8.2.tgz#955bc473ed8af11a002a2be52071bf475638607b"
+  integrity sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==
   dependencies:
     tslib "^2.1.0"
 
