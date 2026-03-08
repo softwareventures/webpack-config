@@ -96,7 +96,7 @@
     "semantic-release": "22.0.12",
     "semantic-release-pinst": "1.0.4",
     "typescript": "5.9.3",
-    "webpack": "5.105.0"
+    "webpack": "5.105.4"
   },
   "eslintConfig": {
     "root": true,
