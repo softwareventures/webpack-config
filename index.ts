@@ -388,8 +388,8 @@ function WebpackConfig(
             },
             resolve: {
                 extensionAlias: {
-                    ".js": [".ts", ".js"],
-                    ".mjs": [".mts", ".mjs"]
+                    ".js": [".ts", ".tsx", ".js"],
+                    ".mjs": [".mts", ".mtsx", ".mjs"]
                 }
             },
             devtool: mode === "development" ? "inline-source-map" : false,
